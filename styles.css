@@ -54,6 +54,9 @@ main {
   padding: 1em;
 }
 footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   background-color: var(--secondary);
   padding: 1em;
   text-align: center;
