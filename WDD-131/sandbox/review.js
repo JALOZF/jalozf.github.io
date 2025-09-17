@@ -22,10 +22,22 @@ jQuery features in JavaScript:
 to-do: use query to generate a navbar.
 */
 
-const myApples = 4;
-const friendApples = 2;
-let total = myApples + friendApples;
+const navItems = ["Home", "Blog", "Photos", "Projects", "About", "Github", "Contact"];
+const navBar = document.querySelector(".navigation");
+navBar.insertAdjacentHTML("afterbegin", `<ul class="navList"></ul>`);
+const navList = document.querySelector(".navList");
+navItems.forEach(item => {
+    navList.insertAdjacentHTML("beforeend", `<li class="navItem ${item}"><a href="#">${item}</a></li>`);
+}
 
-document.getElementById("myAppleElement").textContent = myApples;
-document.getElementById("friendAppleElement").textContent = friendApples;
-document.getElementById("totalApplesElement").textContent = total;
+);
+console.log("Navigation bar created with items:", navItems);
+console.log("The navbar element:", navBar);
+
+document.querySelector(".Home").setAttribute("href", "index.html");
+document.querySelector(".Blog").setAttribute("href", "blog.html");
+document.querySelector(".Photos").setAttribute("href", "photos.html");
+document.querySelector(".Projects").setAttribute("href", "projects.html");
+document.querySelector(".About").setAttribute("href", "about.html");
+document.querySelector(".Github").setAttribute("href", "https://github.com/dchecketts");
+document.querySelector(".Contact").setAttribute("href", "mailto:danielkchecketts@gmail.com");
