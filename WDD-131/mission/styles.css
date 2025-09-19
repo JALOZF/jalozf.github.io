@@ -1,3 +1,58 @@
 :root {
+    /* Basic variables */
     --background-color: #f0f0f0;
+    --primary-text: black;
+    --secondary-text: #006EB6;
+    --title-font: "Newsreader", serif;
+
+    /* Dark Mode varaibles */
+    --dark-background-color: #121212;
+    --dark-text-color: #e0e0e0;
+}
+/* Basic formatting and light mode */
+* {
+    box-sizing: border-box;
+}
+img {
+    max-width: 100%;
+    width: 150px;
+    display: block;
+    margin: auto;
+}
+
+.content {
+    border-style: solid;
+    border-width: 1px;
+    margin: 30px 25%;
+    max-width: 1200px;
+    padding: 5em;
+    line-height: 1.5;
+}
+.content p {
+    font-size: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    font-family: var(--title-font);
+    text-transform: uppercase;
+}
+h2 {
+    color: var(--secondary-text);
+    font-size: small;
+    letter-spacing: 4px;
+}
+header {
+    border-style: none none solid none;
+    border-width: 1px;
+}
+
+li {
+    padding-bottom: 1em;
+}
+
+/* Dark Mode */
+.dark {
+    background-color: var(--dark-background-color);
+    color: var(--dark-text-color);
 }
