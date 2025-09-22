@@ -1,0 +1,69 @@
+/* @media not|or mediatype and(expressions) */
+
+/* 
+Goals for header, main and footer: 
+- have a maximum width of 640 pixels 
+- are centered on the page using margin: 1rem auto 
+- include a faint border and appropriate padding 
+- have a blueish background color of your choice 
+*/
+
+/* Basic */
+body {
+    font-family: "Roboto", sans-serif;
+        font-optical-sizing: auto;
+        /* font-weight: <weight>; */
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+
+     max-width: 640px;
+        margin: 1rem auto;
+}
+
+header, main, footer {
+    max-width: 640px;
+    margin: 1rem auto;
+
+}
+
+header {
+    /* text-align: center; */
+    border: 10px solid lightblue;
+}
+footer {
+    background-color: lightblue;
+    border: 10px solid lightblue;
+}
+
+main {
+    /* padding: 1em; */
+    background-color: white;
+}
+section {
+    padding: 1em;
+    border: 10px solid lightblue;
+}
+
+/* grid */
+.container {
+    display: grid;
+    grid-template-columns: 3;
+}
+
+/* Desktop */
+@media screen and (min-width: 500px) {
+    header {
+        background-color: black;
+        border-color: black;
+        color: white;
+    }
+    .first {
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+    .second {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    
+}
