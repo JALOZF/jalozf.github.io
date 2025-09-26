@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=family=Mooli&display=swap");
+:root {
+    --primary-color: #305319;
+    --secondary-color: #f6ffd3;
+    --accent-color: #f45b69;
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: Arial, Helvetica, sans-serif;
+    --secondary-font: Mooli, san-serif;
+}
+
+/* Global Styling, Mobile basis */
+body {
+    background-color: var(--secondary-color);
+    font-family: var(--primary-font);
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 50px;
+}
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 20px;
+    text-align: center;
+}
+main {
+    padding: 20px;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+h1, h2 {
+    text-align: center;
+    font-family: var(--headerfont);
+}
+img {
+    max-width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    border-style: solid;
+    border-color: white;
+    box-shadow: 10px 5px 5px black;
+}
+
+/* Menu Things */
+button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 5px;
+}
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+ul {
+    list-style-type: none;
+    margin-left: 32px;
+    padding-left: 75px;
+    padding-right: 75px;
+    width: 850px;
+}
+a {
+    color: var(--text-light);
+}
+li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* JS interactive classes */
+.hide {
+    display: none;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+/* Viewer CSS */
+.viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    /* visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease; */
+
+    /* Altitude on page (Always appear on top) */
+    /* z-index: 10; */
+}
+.viewer button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.viewer img {
+    border-style: none;
+    box-shadow: none;
+    aspect-ratio: auto;
+    max-height: 90%;
+    max-width: 90%;
+    object-fit: contain;
+}
+.viewer-hide {
+    display: none;
+}
+
+/* Media Queries */
+@media screen and (min-width: 700px) {
+
+    main {
+            padding: 20px;
+            text-align: center;
+            margin-left: 50px;
+            margin-right: 50px;   
+        }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+        }
+}
+
+@media screen and (min-width: 1000px) {
+
+    main {
+            padding: 20px;
+            text-align: center;
+            margin-left: 125px;
+            margin-right: 125px;   
+        }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr 1fr;
+        }
+    
+    nav ul {
+        display: inline-flex;
+        justify-content: center;
+        gap: 175px;
+    }
+
+    /* On large screens, show the viewer as a centered modal box instead of a full-screen overlay */
+    .viewer {
+        position: fixed; /* keep it above the page */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        height: auto;
+        max-width: 90%;
+        max-height: 90%;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+    .viewer-hide {
+        display: none;
+    }
+}
