@@ -7,10 +7,10 @@ const stepsHtml = steps.map(listTemplate) // use map to convert the list from st
 document.querySelector("#myList").innerHTML = stepsHtml.join("") // set the innerHTML
 
 
-// Map example
-const grades = ["A", "B", "A"];
-function convertGradeToPoints(grade) {
-    let points = 0;
+grades = ['A', 'B', 'A']
+
+function convertGrades(grade) {
+    let points = 0
     if (grade === "A") {
         points = 4;
     } else if (grade === "B") {
@@ -19,25 +19,24 @@ function convertGradeToPoints(grade) {
     return points;
 }
 
-const gpaPoints = grades.map(convertGradeToPoints);
+// Map
+const gpaPoints = grades.map(convertGrades);
 
-// Find average of GPA
-// const pointsTotal = gpaPoints.reduce(function (total, item) {
-//     return total + item;
-// });
-// const gpa = pointsTotal / gpaPoints.length;
+// Reduce
+const pointsTotal = gpaPoints.reduce(function (total, item) {
+    return total + item;
+});
+const gpa = pointsTotal / gpaPoints.length;
 
-// example 2
-// this is the same thing as above, but with an arrow function
-// const pointsTotal = gpaPoints.reduce((total, item) => total + item);
-// const gpa = pointsTotal / gpaPoints.length;
-
-// this could be further simplified as
-const gpa = gpaPoints.reduce((total, item) => total + item) / gpaPoints.length;
+const words = ["watermelon", "peach", "apple", "tomato", "grape"];
 
 // Filter
-fruits = ['watermelon', 'peach', 'apple', 'tomato', 'grape']
+const shorts = words.filter(function (word) {
+    return word.length < 6;
+});
 
-const shorts = fruits.filter(function (fruits) {
-    return WebTransportDatagramDuplexStream.length < 6
-})
+const numbers = [12, 34, 21, 54];
+const luckyNumber = 21;
+
+// indexOf
+let luckyIndex = numbers.indexOf(luckyNumber);
