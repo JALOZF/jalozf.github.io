@@ -1,17 +1,64 @@
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2ecc71;
+    --primary: #3498db;
+    --secondary: #2ecc71;
     --font-color: #333;
     --font-family: 'Helvetica Neue', sans-serif;
 }
 
 body {
     font-family: var(--font-family);
+    padding: 0; margin: 0;
 }
 
-header {}
+header h1 {
+    text-align: center;
+}
+header {
+    text-align: center;
+    margin-bottom: 5em;
+}
+nav {
+    padding: 0.5em;
+    margin-bottom: 1em;
+    text-align: right;
+    border-style: solid none;
+}
 
-main {}
+nav a {
+    margin: 0 1em;
+    text-decoration: none;
+    color: black;
+}
 
-footer {}
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline; 
+}
+
+main .container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+div .data {
+    border-right: 1px solid black;
+    grid-column: 1/2;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 1em;
+    text-align: center;
+    font-size: 0.9em;
+    border-top: solid;
+}
 
