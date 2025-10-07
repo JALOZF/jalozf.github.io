@@ -43,22 +43,26 @@ nav li {
     display: inline; 
 }
 
-main .container {
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-}
-div .data {
-    border-right: 1px solid black;
-    grid-column: 1/2;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
+.container {
+    display: flex;
+    gap: 10px;
     width: 100%;
-    padding: 1em;
-    text-align: center;
-    font-size: 0.9em;
-    border-top: solid;
+    height: 100%;
 }
 
+.content {
+    flex: 1;
+}
+
+.data {
+    border-right: 1px solid black;
+    text-align: right;
+    padding-right: 10px;
+}
+.book {
+
+}
+.filters {
+    border: 1px solid black;
+    padding: 10px;
+}
