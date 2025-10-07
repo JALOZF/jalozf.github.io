@@ -59,8 +59,13 @@ nav li {
     text-align: right;
     padding-right: 10px;
 }
-.book {
-
+.book h2 {
+    text-align: center;
+}
+.book img {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
 }
 .filters {
     border: 1px solid black;
