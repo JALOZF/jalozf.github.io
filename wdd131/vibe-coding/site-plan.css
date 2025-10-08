@@ -107,24 +107,27 @@ p {
 
 .primary {
     background-color: var(--primary-color);
+    color: var(--accent3-color);
 }
 
 .secondary {
     background-color: var(--secondary-color);
+    color: var(--accent2-color);
 }
 
 .accent1 {
     background-color: var(--accent1-color);
+    color: black;
 }
 
 .accent2 {
     background-color: var(--accent2-color);
-    color: var(--accent1-color);
+    color: var(--secondary-color);
 }
 
 .accent3 {
     background-color: var(--accent3-color);
-    color: var(--accent1-color);
+    color: var(--primary-color);
 }
 
 p.colored {
