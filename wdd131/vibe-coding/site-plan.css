@@ -216,3 +216,6 @@ nav a:hover {
 .wireframe {
     max-width: 800px;
 }
+img {
+    max-width: 50%;
+}

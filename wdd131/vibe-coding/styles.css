@@ -1,0 +1,70 @@
+:root {
+    --primary-color: #989898;
+    /* Battleship Grey */
+    --secondary-color: #e0e0e0;
+    /* Platnum */
+    --accent1-color: #ffffff;
+    /* White */
+    --accent2-color: #0e0e0e;
+    /* Night */
+    --accent3-color: #000000;
+    /* Black */
+
+    --heading-font: "Sono", Helvetica, sans-serif;
+    --paragraph-font: "Roboto Mono", Helvetica, sans-serif;
+
+
+
+    --headline-color-on-white: var(--primary-color);
+    /* headlines on a white background */
+
+    --headline-color-on-color: var(--accent1-color);
+    /* headlines on a colored background */
+
+    --paragraph-color-on-white: var(--primary-color);
+    /* paragraph text on a white background */
+
+    --paragraph-color-on-color: var(--accent1-color);
+    /* paragraph text on a colored background */
+
+    --paragraph-background-color: var(--primary-color);
+    --nav-link-color: var(--primary-color);
+    --nav-background-color: var(--secondary-color);
+    --nav-hover-link-color: var(--accent3-color);
+    --nav-hover-background-color: var(--primary-color);
+}
+
+nav {
+    background-color: var(--nav-background-color);
+    line-height: 3em;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 0;
+    margin: 0;
+    
+}
+nav {
+    list-style-type: none;
+    display: flex;
+}
+
+nav a {
+    padding: 1em;
+    min-width: 120px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav a:link,
+nav a:visited {
+    color: var(--nav-link-color);
+}
+
+nav a:hover {
+    color: var(--nav-hover-link-color);
+    background-color: var(--nav-hover-background-color);
+}
+
+.icon {
+    max-width: 100px;
+}
