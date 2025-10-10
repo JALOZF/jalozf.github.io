@@ -219,3 +219,14 @@ nav a:hover {
 img {
     max-width: 50%;
 }
+svg {
+    max-width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.b {
+    stroke: var(--primary-color);
+    fill: var(--primary-color);
+    stroke-miterlimit: 10;
+}
