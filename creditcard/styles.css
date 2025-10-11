@@ -1,10 +1,35 @@
-.card {
-    border: 1px solid black;
-    /* background-color: gray; */
-    padding: 15px;
+.main-grid > section {
+    border: 2px dashed red;
 }
 
-.container {
-    align-self: center;
-    margin: 50px;
+.main-grid {
+    margin: 10px 50px 10px 50px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(48px, auto);
+    gap: 1rem;
+    grid-template-areas: 
+        "a a a a b"
+        "a a a a b"
+        "a a a a b"
+        ". b b b b"
+        ". . . . c";
+    align-items: start;
+}
+
+#card-front {
+    grid-area: a;
+}
+
+#card-back {
+    grid-area: b;
+}
+
+.main-grid > button {
+    grid-area: c;
+    z-index: -1;
+}
+
+img {
+    max-width: 35px;
 }
