@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stub</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 100px 100vh 50px;
+        }
+        header {
+            border: 1px solid black;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 0;
+            grid-row-end: 1;
+        }
+        body {
+            border: 1px dashed green;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        footer {
+            border: 1px double blue;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 3;
+        }
+
+        .content {
+            border: 1px dotted darkviolet;
+            margin: 50px auto 50px auto;
+            height: 75vh;
+            width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <section></section>
+    </header>
+    <body>
+        <section class="content"></section>
+    </body>
+    <footer></footer>
+</body>
+</html>

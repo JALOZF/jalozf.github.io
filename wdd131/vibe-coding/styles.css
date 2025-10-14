@@ -37,13 +37,6 @@
     --primary-svg-color: var(--accent3-color);
     --secondary-svg-color: var(--accent1-color)
 }
-a{
-    border: 1px solid black;
-}
-a br {
-    margin: 5px;
-}
-
 
 /* Logo manipulation */
 svg {
@@ -58,3 +51,11 @@ svg {
     stroke-miterlimit: 10;
     fill: var(--primary-svg-color);
 }
+
+/* Main CSS */
+/* a{
+    border: 1px solid black;
+}
+a br {
+    margin: 5px;
+} */
