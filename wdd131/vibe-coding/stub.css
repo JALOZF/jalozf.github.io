@@ -32,7 +32,7 @@ ul {
         'logo two'
         ;
         height: 90px;
-        max-width: fit-content;
+        width: 20%;
         padding-right: 50px;
         border: 1px solid black;
 }
@@ -73,6 +73,7 @@ nav>ul>li>a {
 .selectors {
     border: 1px solid black;
     height: 90px;
+    width: 60%;
     justify-content: space-around;
     align-items: center;
 }
@@ -80,9 +81,11 @@ nav>ul>li>a {
     padding: 0;
 }
 
+/* Main Nav */
 .main-nav {
     border: 1px solid black;
     height: 90px;
+    width: 20%;
     display: flex;
 }
 .main-nav>li {
