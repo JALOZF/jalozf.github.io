@@ -221,8 +221,9 @@ footer {
 }
 .footer-logo img {
     height: inherit;
+    width: fit-content;
     padding: 10px 0 10px 10px;
-    margin-right: 10px;
+    margin: 0 10px 0 200px;
 }
 .footer-logo>a {
     width: 70%;
