@@ -1,50 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vibe Coding</title>
-    <link rel="stylesheet" href="/wdd131/vibe-coding/styles.css">
-    <link rel="icon" href="/wdd131/vibe-coding/vibe-coding-resources/icons/favicon.svg">
-    <script src="/wdd131/vibe-coding/main.js" defer></script>
-</head>
-
-<body>
-    <header>
-        <nav>
-            <ul class="logo">
-                <li id="logo"><img src="/wdd131/vibe-coding/vibe-coding-resources/icons/icon.svg" alt="Logo" id="icon">
-                </li>
-                <li id="logo-text"><a href="#">Vibe Coding</a></li>
-                <li id="logo-text"><a href="#">Development Log</a></li>
-            </ul>
-            <ul class="selectors">
-                <li><label for="filter" class="hidden">Filter</label><select name="filter" id="filter">
-                        <option value="default">Filter</option>
-                        <option value="html">HTML</option>
-                        <option value="css">CSS</option>
-                        <option value="js">Javascript</option>
-                        <option value="python">Python</option>
-                        <option value="misc">Misc</option>
-                    </select></li>
-                <li><label for="sort" class="hidden">Sort</label><select name="sort" id="sort">
-                        <option value="default-sort">Sort</option>
-                        <option value="alphabetical">Alphabetical</option>
-                        <option value="alphabetical">Alphabetical Reverse</option>
-                        <option value="date">Date</option>
-                        <option value="date">Date Reverse</option>
-                    </select></li>
-            </ul>
-            <ul class="main-nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Newest</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="content">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vibe Coding</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="vibe-coding-resources/icons/favicon.svg">
+        <script src="main.js" defer></script>
+    </head>
+    <body>
+        <main>
             <section class="card" id="lorem">
                 <h2 class="title">Lorem ipsum</h2>
                 <h3 class="tags">HTML, CSS, Javascript</h3>
@@ -63,20 +28,6 @@
                 <img src="https://picsum.photos/300/300" alt="Placeholder" class="thumbnail">
                 <span class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
             </section>
-        </section>
-    </main>
-    <footer>
-        <div class="footer-logo">
-            <img src="/wdd131/vibe-coding/vibe-coding-resources/icons/icon.svg" alt="Logo">
-            <a href="#">Vibe Coding</a>
-            <a href="#">Development Log</a>
-        </div>
-        <div class="links">
-            <a href="#"><img src="/wdd131/vibe-coding/vibe-coding-resources/icons/account_box.svg" alt="LinkedIn"></a>
-            <a href="#"><img src="/wdd131/vibe-coding/vibe-coding-resources/icons/cloud.svg" alt="Github"></a>
-            <a href="#"><img src="/wdd131/vibe-coding/vibe-coding-resources/icons/mail.svg" alt="Contact"></a>
-        </div>
-    </footer>
-</body>
-
+        </main>
+    </body>
 </html>
