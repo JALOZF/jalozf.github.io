@@ -281,3 +281,13 @@ const recipes = [
 ]
 
 // Add recipies from class!
+
+
+function random(number) {
+    return Math.floor(Math.random() * number)
+}
+function getRandomListEntry(list) {
+    const listLength = list.length;
+    const randomNumber = random(listLength);
+    return list[randomNumber];
+}

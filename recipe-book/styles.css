@@ -1,10 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+
 :root {
-    --font-family: sans-serif
-    --header-font: 
+    --primary-color: rgb(255, 255, 255);
+    --secondary-color: #59c3c3;
+    --text-dark: white;
+    --text-light: black;
+    --primary-font: Arial, Helvetica, sans-serif;
+    --secondary-font: 'Delius', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 .hidden {
     display: none;
+}
+
+img {
+    max-width: 100%;
 }
 
 *,
@@ -13,60 +29,186 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    border: 1px solid black;
-    font-family: var(--font-family);
 }
 
 /* Mobile Styling */
-header {
-    display: grid;
-    grid-template-areas: 
-        'image header'
-        'search search'
-    ;
-}
-header>img {
-    grid-area: image;
-    height: 50px;
-    align-self: right;
-}
-h1 {
-    grid-area: header;
-    text-align: center;
+body {
+    font-family: var(--primary-font);
+    margin: 0;
+    padding: 0;
 }
 
-.search {
-    grid-area: search;
-    display: flex;
-    justify-content: center;
-    height: 25px;
+header {
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 1px solid grey;
 }
-.search>img {
-    height: inherit;
+
+header img {
+    width: 50px;
+    vertical-align: middle;
+}
+
+header h1 {
+    display: inline;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-family: var(--secondary-font);
+    font-size: 2.5em;
+}
+
+.search-form {
+    display: flex;
+    margin: 20px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.search-form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid var(--text-dark);
+    border-radius: 5px 0 0 5px;
+}
+
+.search-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.search-form button img {
+    width: 20px;
+    height: 20px;
+}
+
+#recipes {
+    padding: 0 20px;
 }
 
 .recipe {
-    max-width: 75vw;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.5em;
+    margin: 10px 0;
 }
-.recipe>img {
-    width: 75%;
+.recipe h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    text-align: center;
+}
+.recipe h2 a {
+    text-decoration: none;
+    color: lightblue;
+}
+
+.recipe img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.recipe__tags {
+    margin: 10px 0;
+    list-style: none;
+}
+
+.recipe__tags li {
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-right: 5px;
+    border: 1px solid grey;
+    width: fit-content;
+}
+
+.rating {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 20% 0 20%;
+}
+
+.icon-star, .icon-star-empty {
+    color: gold;
+    font-size: 1.2em;
 }
 
 footer {
-    display: flex;
-}
-.tiny {
+    padding: 10px;
+    text-align: center;
     font-size: 0.6em;
 }
-.social {
-    height: 90px;
-    display: flex;
+
+footer .social a img {
+    width: 25px;
+    margin: 0 10px;
 }
-.social>a {
-    height: inherit;
-}
-.social>a>img {
-    height: inherit;
+
+img {
+    max-width: 100%;
 }
 
 /* Desktop Styling */
+@media (min-width: 600px) {
+    .search-form {
+        flex-direction: row;
+    }
+
+    .search-form input {
+        width: auto;
+        flex: 1;
+    }
+
+    .recipe {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .recipe img {
+        width: 50%;
+        margin-right: 20px;
+    }
+
+    .recipe {
+        /* Also for recipe content */
+        flex: 1;
+    }
+
+    .rating {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0 30% 0 30%;
+    }
+
+    .recipe__description {
+        padding: 30px 10px 10px 10px;
+    }
+}
+
+@media (min-width: 960px) {
+    body {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    header,
+    footer {
+        padding: 20px 0;
+    }
+
+    .recipe {
+        flex-direction: row;
+    }
+
+    .recipe img {
+        width: 40%;
+    }
+
+    .recipe .recipe-content {
+        flex: 1;
+    }
+}
