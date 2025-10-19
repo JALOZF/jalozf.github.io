@@ -114,12 +114,13 @@ header h1 {
 .recipe__tags {
     margin: 10px 0;
     list-style: none;
+    display: flex;
 }
 
 .recipe__tags li {
     padding: 5px 10px;
     border-radius: 3px;
-    margin-right: 5px;
+    margin: 5px 5px 0 ;
     border: 1px solid grey;
     width: fit-content;
 }
@@ -186,6 +187,10 @@ img {
 
     .recipe__description {
         padding: 30px 10px 10px 10px;
+    }
+
+    .recipe__tags {
+        display: block;
     }
 }
 
