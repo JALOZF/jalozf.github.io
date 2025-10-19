@@ -151,6 +151,9 @@ footer .social a img {
 img {
     max-width: 100%;
 }
+.recipe__description {
+    display: none;
+}
 
 /* Desktop Styling */
 @media (min-width: 600px) {
@@ -187,6 +190,8 @@ img {
 
     .recipe__description {
         padding: 30px 10px 10px 10px;
+        display: contents;
+
     }
 
     .recipe__tags {
