@@ -1,5 +1,5 @@
 // Generate header and footer content
-function generateBasics() {
+function generateHeader() {
     const headerContent = `<header>
         <nav>
             <ul class="logo">
@@ -12,7 +12,7 @@ function generateBasics() {
                     <option value="default">Filter</option>
                     <option value="html">HTML</option>
                     <option value="css">CSS</option>
-                    <option value="js">Javascript</option>
+                    <option value="js">JavaScript</option>
                     <option value="python">Python</option>
                     <option value="misc">Misc</option>
                 </select></li>
@@ -31,6 +31,10 @@ function generateBasics() {
             </ul>
         </nav>
     </header>`
+    document.body.insertAdjacentHTML("afterbegin", headerContent)
+}
+
+function generateFooter() {
     const footerContent = `<footer>
         <div class="footer-logo">
             <img src="/wdd131/vibe-coding/vibe-coding-resources/icons/icon.svg" alt="Logo">
@@ -43,22 +47,80 @@ function generateBasics() {
             <a href="#"><img src="/wdd131/vibe-coding/vibe-coding-resources/icons/mail.svg" alt="Contact"></a>
         </div>
     </footer>`
-    document.body.insertAdjacentHTML("afterbegin", headerContent)
     document.body.insertAdjacentHTML("beforeend", footerContent)
 }
 
 // Generate home page content
-const cards = [
-    { id: 1, title: 'lorem ipsum', tags: ['html', 'css', 'javascript'], thumbnail: 'https://picsum.photos/400/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
+const cardList = [
+    { id: 1, title: 'lorem ipsum', tags: ['HTML', 'CSS', 'JavaScript'], thumbnail: 'https://picsum.photos/400/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
 
-    { id: 2, title: 'lorem ipsum', tags: ['html', 'css'], thumbnail: 'https://picsum.photos/200/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
+    { id: 2, title: 'lorem ipsum', tags: ['HTML', 'CSS'], thumbnail: 'https://picsum.photos/200/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
 
-    { id: 3, title: 'lorem ipsum', tags: ['html', 'javascript'], thumbnail: 'https://picsum.photos/300/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
-    
-    { id: 4, title: 'lorem ipsum', tags: ['python'], thumbnail: 'https://picsum.photos/200/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' }
+    { id: 3, title: 'lorem ipsum', tags: ['HTML', 'JavaScript'], thumbnail: 'https://picsum.photos/300/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
+
+    { id: 4, title: 'lorem ipsum', tags: ['Python'], thumbnail: 'https://picsum.photos/300/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' }
 ]
+
+function setLocalStorage(key, value) {
+    localStorage.setItem(key, JSON.stringify(value))
+}
+
+function getLocalStorage(key) {
+    const value = localStorage.getItem(key)
+    return JSON.parse(value)
+}
+
+const fullCardList = []
+
+function generateCard(card) {
+    // Generate list of tags for display (i.e. HTML, CSS, etc.)
+    const tagList = card.tags
+    const displayTags = tagList.join(', ')
+    // convert tags to lowercase for the ids in the class tag (i.e. class="html css javascript") - ids are supposed to be unique, so everything will go in class
+    let idTags = tagList.join(' ')
+    idTags = idTags.toLowerCase()
+
+    const cardTemplate = `<section class="card" id="${card.id}">
+        <h2 class="title">${card.title}</h2>
+        <h3 class="tags ${idTags}">${displayTags}</h3>
+        <img src="${card.thumbnail}" alt="Placeholder" class="thumbnail">
+        <span class="description">${card.description}</span>
+    </section>`
+    fullCardList.push(cardTemplate)
+    return cardTemplate
+}
+
+function generateCardList() {
+    cardList.forEach(item => {
+        const cardContent = generateCard(item)
+        const target = document.body.querySelector('.display')
+        target.insertAdjacentHTML("beforeend", cardContent)
+    })
+}
+
+
 // Sort: alphabetical, alphabetical reverse, date, date reverse
 // Filter by language tags from dropdown
 
 // Call functions
-generateBasics()
+generateHeader()
+generateCardList()
+generateFooter()
+
+
+// YOu can only store items in localStorage as strings
+localStorage.setItem('name', 'Daniel Checketts')
+const myName = localStorage.getItem('name')
+console.log(myName)
+
+// Send cards to localStorage
+setLocalStorage("cardList", cardList)
+// Retrieve cards from localStorage don't forget the quotes for the key!
+storedCardList = getLocalStorage('cardList')
+console.log(storedCardList)
+
+// All pages on the same host can access the LocalStorage!
+
+// Ask about url.html?id=1234 <- how to retrieve the id
+
+// Set each card to be a clickable element in its entirety, set url.html?id=xxxx on click

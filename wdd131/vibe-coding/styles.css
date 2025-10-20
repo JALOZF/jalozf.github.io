@@ -257,7 +257,8 @@ svg {
     
         .links {
             display: flex;
-            justify-content: space-evenly;
+            justify-content: flex-end;
+            margin-right: 100px;
             align-items: center;
             flex: 1 1 auto;
             width: 100px;
