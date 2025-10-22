@@ -3,6 +3,7 @@ const masterList = [
         id: 0, 
         title: 'Blog', 
         description: 'This page is a placeholder for the blog site.', 
+        date: '',
         images: [
             {id: 0, url: '#', placeholder: 'Placeholder image.'},
             {id: 1, url: '#', placeholder: 'Placeholder image.'}
@@ -20,6 +21,7 @@ const masterList = [
         id: 1,
         title: 'Placeholder',
         description: '',
+        date: '',
         images: [
             { id: 0, url: '#', placeholder: '' },
             { id: 1, url: '#', placeholder: '' }
@@ -38,12 +40,14 @@ const cardListTemplate = [
         id: 0,
         title: 'Placeholder',
         description: '',
+        date: '',
         thumbnail: {id: 0, url: '#', placeholder: ''}
     },
     {
         id: 1,
         title: 'Placeholder',
         description: '',
+        date: '',
         thumbnail: { id: 0, url: '#', placeholder: '' }
     }
 ]

@@ -1,6 +1,28 @@
+function setLocalStorage(key, value) {
+    localStorage.setItem(key, JSON.stringify(value))
+}
+
+function getLocalStorage(key) {
+    const value = localStorage.getItem(key)
+    return JSON.parse(value)
+}
+
+const cardList = [
+    { id: 1, title: 'lorem ipsum', tags: ['HTML', 'CSS', 'JavaScript'], thumbnail: 'https://picsum.photos/400/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
+
+    { id: 2, title: 'lorem ipsum', tags: ['HTML', 'CSS'], thumbnail: 'https://picsum.photos/200/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
+
+    { id: 3, title: 'lorem ipsum', tags: ['HTML', 'JavaScript'], thumbnail: 'https://picsum.photos/300/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
+
+    { id: 4, title: 'lorem ipsum', tags: ['Python'], thumbnail: 'https://picsum.photos/300/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' }
+]
+
+lastPost = (cardList.length) - 1
+setLocalStorage('temp-id', lastPost)
+
 // Generate header and footer content
 function generateHeader() {
-    lastPost = (cardList.length)-1
+    lastPost = getLocalStorage('temp-id')
     const headerContent = `<header>
         <nav>
             <ul class="logo">
@@ -34,6 +56,8 @@ function generateHeader() {
     </header>`
     document.body.insertAdjacentHTML("afterbegin", headerContent)
 }
+generateHeader()
+
 
 function generateFooter() {
     const footerContent = `<footer>
@@ -52,28 +76,10 @@ function generateFooter() {
 }
 
 // Generate home page content
-export const cardList = [
-    { id: 1, title: 'lorem ipsum', tags: ['HTML', 'CSS', 'JavaScript'], thumbnail: 'https://picsum.photos/400/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
-
-    { id: 2, title: 'lorem ipsum', tags: ['HTML', 'CSS'], thumbnail: 'https://picsum.photos/200/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
-
-    { id: 3, title: 'lorem ipsum', tags: ['HTML', 'JavaScript'], thumbnail: 'https://picsum.photos/300/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
-
-    { id: 4, title: 'lorem ipsum', tags: ['Python'], thumbnail: 'https://picsum.photos/300/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' }
-]
-
-function setLocalStorage(key, value) {
-    localStorage.setItem(key, JSON.stringify(value))
-}
-
-function getLocalStorage(key) {
-    const value = localStorage.getItem(key)
-    return JSON.parse(value)
-}
-
-const fullCardList = []
 
 function generateCard(card) {
+    const fullCardList = []
+
     // Generate list of tags for display (i.e. HTML, CSS, etc.)
     const tagList = card.tags
     const displayTags = tagList.join(', ')
@@ -90,8 +96,56 @@ function generateCard(card) {
     </section>
 </a>`
     fullCardList.push(cardTemplate)
-    return cardTemplate
+    return cardTemplate, fullCardList
 }
+
+// Include sortCards() and filterCards() before rendering the list of cards. 
+
+function sortCards() {
+    // Get sort choice
+
+    // Alphabetical
+
+    // Alphabetical Reverse
+
+    // Date
+
+    // Date Reverse
+}
+
+const filterSelector = document.body.querySelector('#filter')
+filterSelector.addEventListener('change', () => {
+    function filterCards(selectorElement) {
+        // Get filter choice
+        filterChoice = selectorElement.value.toLowerCase()
+        console.log(filterChoice)
+
+        if (filterChoice !== 'default') {
+            return cardList.filter(card => card.tags.includes(filterChoice))
+        }
+        else {
+            return cardList
+        }
+
+    }
+
+    const filteredCards = filterCards(filterSelector)
+
+    function renderCards(cardsToDisplay) {
+        const container = document.getElementById('card-container');
+        // container.innerHTML = ''; // Clear existing cards
+
+        if (cardsToDisplay) {
+            cardsToDisplay.forEach(card => {
+                const cardElement = document.createElement('div');
+                cardElement.className = 'card';
+                cardElement.textContent = card.name;
+                container.appendChild(cardElement);
+            });
+        }
+    }
+    renderCards(filteredCards)
+})
 
 function generateCardList() {
     cardList.forEach(item => {
@@ -101,14 +155,11 @@ function generateCardList() {
     })
 }
 
-
-// Sort: alphabetical, alphabetical reverse, date, date reverse
-// Filter by language tags from dropdown
-
 // Call functions
-generateHeader()
 generateCardList()
 generateFooter()
+
+
 
 
 // You can only store items in localStorage as strings
@@ -129,6 +180,3 @@ function getParam(param) {
     const urlParams = new URLSearchParams(window.location.search)
     return urlParams.get(param)
 }
-
-lastPost = (cardList.length) - 1
-setLocalStorage('temp-lastPost', cardList)

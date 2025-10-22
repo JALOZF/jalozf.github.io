@@ -7,12 +7,16 @@ function getLocalStorage(key) {
     return JSON.parse(value)
 }
 
+function getParam(param) {
+    // url.html?id=1234 <- Retrieve the id content: getParam('id')
+    const urlParams = new URLSearchParams(window.location.search)
+    return urlParams.get(param)
+}
 
-cardList = getLocalStorage('temp-lastPost')
 
 // Generate header and footer content
 function generateHeader() {
-    lastPost = (cardList.length) - 1
+    lastPost = getLocalStorage('temp-id')
     const headerContent = `<header>
         <nav>
             <ul class="logo">
@@ -65,7 +69,9 @@ function generateFooter() {
 
 const posts = [
     {
-        id: 0, title: "Blog", content: `<main>
+        id: 0, 
+        title: "Blog", 
+        content: `<main>
         <h1>Title</h1>
         <span>Placeholder</span>
         <div class="image-container">
@@ -76,9 +82,11 @@ const posts = [
             print('Hello World!')
         </code></pre>
         <span>Placeholder</span>
-    </main>` },
+    </main>` 
+    },
     {
-        id: 1, title: "What is a Python Dictionary?", content: `<main>
+        id: 1, 
+        title: "What is a Python Dictionary?", content: `<main>
         <h1>What is a Python Dictionary?</h1>
         <span id="content-one">Dictionaries are one of Python's most flexible and frequently used built-in data
             structures. If you've ever dealt with a phone book, a real-life dictionary, or a database, you already understand the core concept: they store data as pairs—a way to look up a value using a specific key. Each item in the dictionary is a key-value pair.</span>
@@ -110,7 +118,8 @@ const posts = [
         <span id="content-three">Content 3</span>
     </main>`}, 
     {
-        id: 2, title: "What's the deal with JavaScript?", content: `<main>
+        id: 2, 
+        title: "What's the deal with JavaScript?", content: `<main>
         <h1>Title</h1>
         <span>Placeholder</span>
         <div class="image-container">
@@ -123,9 +132,11 @@ const posts = [
         <span>Placeholder</span>
     </main>` },
     {
-        id: 3, title: "Everything is clickable", content: `<main>
-        <h1>Title</h1>
-        <span>Placeholder</span>
+        id: 3, 
+        title: "Everything is Clickable", 
+        content: `<main>
+        <h1>Everything is Clickable</h1>
+        <span>Most of the time, click events don't happen unless you're using an anchor tag, or a button. HTMX, on the other hand</span>
         <div class="image-container">
             <img src="#" alt="Placeholder">
         </div>
@@ -180,19 +191,12 @@ function generatePost(post) {
     document.title = title
 }
 
-// url.html?id=1234 <- Retrieve the id content: getParam('id')
-function getParam(param) {
-    const urlParams = new URLSearchParams(window.location.search)
-    return urlParams.get(param)
-}
-
 const postId = Number(getParam('id'))
-console.log(postId)
 const selectedPost = posts.find(post => post.id === postId)
 
 // Check if a post was found before accessing its properties
 if (selectedPost) {
-    console.log("Found Post Title:", selectedPost.title); // Output: Found Post Title: First Post
+    console.log("Title Found:", selectedPost.title); // Output: Found Post Title: First Post
     // Now you can use this object to display content, etc.
 } else {
     console.error("Post not found for ID:", postId);
