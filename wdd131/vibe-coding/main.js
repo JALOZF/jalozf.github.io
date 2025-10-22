@@ -1,5 +1,6 @@
 // Generate header and footer content
 function generateHeader() {
+    lastPost = (cardList.length)-1
     const headerContent = `<header>
         <nav>
             <ul class="logo">
@@ -25,9 +26,9 @@ function generateHeader() {
                 </select></li>
             </ul>
             <ul class="main-nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Newest</a></li>
+                <li><a href="./">Home</a></li>
+                <li><a href="./about/">About</a></li>
+                <li><a href="./blog/?id=${lastPost}">Newest</a></li>
             </ul>
         </nav>
     </header>`
@@ -51,7 +52,7 @@ function generateFooter() {
 }
 
 // Generate home page content
-const cardList = [
+export const cardList = [
     { id: 1, title: 'lorem ipsum', tags: ['HTML', 'CSS', 'JavaScript'], thumbnail: 'https://picsum.photos/400/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
 
     { id: 2, title: 'lorem ipsum', tags: ['HTML', 'CSS'], thumbnail: 'https://picsum.photos/200/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
@@ -80,12 +81,14 @@ function generateCard(card) {
     let idTags = tagList.join(' ')
     idTags = idTags.toLowerCase()
 
-    const cardTemplate = `<section class="card" id="${card.id}">
+    const cardTemplate = `<a href="blog/?id=${card.id}" class="invisible">
+    <section class="card" id="${card.id}">
         <h2 class="title">${card.title}</h2>
         <h3 class="tags ${idTags}">${displayTags}</h3>
         <img src="${card.thumbnail}" alt="Placeholder" class="thumbnail">
         <span class="description">${card.description}</span>
-    </section>`
+    </section>
+</a>`
     fullCardList.push(cardTemplate)
     return cardTemplate
 }
@@ -108,19 +111,24 @@ generateCardList()
 generateFooter()
 
 
-// YOu can only store items in localStorage as strings
-localStorage.setItem('name', 'Daniel Checketts')
-const myName = localStorage.getItem('name')
-console.log(myName)
+// You can only store items in localStorage as strings
+// localStorage.setItem('name', 'Daniel Checketts')
+// const myName = localStorage.getItem('name')
+// console.log(myName)
 
 // Send cards to localStorage
-setLocalStorage("cardList", cardList)
+// setLocalStorage("cardList", cardList)
 // Retrieve cards from localStorage don't forget the quotes for the key!
-storedCardList = getLocalStorage('cardList')
-console.log(storedCardList)
+// storedCardList = getLocalStorage('cardList')
+// console.log(storedCardList)
 
 // All pages on the same host can access the LocalStorage!
 
-// Ask about url.html?id=1234 <- how to retrieve the id
+// url.html?id=1234 <- Retrieve the id content: getParam('id')
+function getParam(param) {
+    const urlParams = new URLSearchParams(window.location.search)
+    return urlParams.get(param)
+}
 
-// Set each card to be a clickable element in its entirety, set url.html?id=xxxx on click
+lastPost = (cardList.length) - 1
+setLocalStorage('temp-lastPost', cardList)

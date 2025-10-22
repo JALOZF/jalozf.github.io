@@ -67,6 +67,10 @@ svg {
 .hidden {
     display: none;
 }
+.invisible {
+    text-decoration: none;
+    color: inherit;
+}
 
 /* Mobile Styling */
 

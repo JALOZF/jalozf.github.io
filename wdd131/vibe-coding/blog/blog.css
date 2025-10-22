@@ -1,0 +1,290 @@
+:root {
+    --primary-color: #989898;
+    /* Battleship Grey */
+    --secondary-color: #e0e0e0;
+    /* Platnum */
+    --accent1-color: #ffffff;
+    /* White */
+    --accent2-color: #0e0e0e;
+    /* Night */
+    --accent3-color: #000000;
+    /* Black */
+
+    --heading-font: "Sono", Helvetica, sans-serif;
+    --paragraph-font: "Roboto Mono", Helvetica, sans-serif;
+
+
+
+    --headline-color-on-white: var(--primary-color);
+    /* headlines on a white background */
+
+    --headline-color-on-color: var(--accent1-color);
+    /* headlines on a colored background */
+
+    --paragraph-color-on-white: var(--primary-color);
+    /* paragraph text on a white background */
+
+    --paragraph-color-on-color: var(--accent1-color);
+    /* paragraph text on a colored background */
+
+    --paragraph-background-color: var(--primary-color);
+    --nav-link-color: var(--primary-color);
+    --nav-background-color: var(--secondary-color);
+    --nav-hover-link-color: var(--accent3-color);
+    --nav-hover-background-color: var(--primary-color);
+
+    /* SVG manipulation */
+    --primary-svg-color: var(--accent3-color);
+    --secondary-svg-color: var(--accent1-color)
+        /* Selector variables */
+        --select-border: #777;
+    --select-focus: blue;
+    --select-arrow: var(--select-border);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Logo manipulation */
+svg {
+    max-width: 100px;
+}
+
+.f {
+    fill: var(--secondary-svg-color);
+}
+
+.g {
+    stroke: var(--primary-svg-color);
+    stroke-miterlimit: 10;
+    fill: var(--primary-svg-color);
+}
+
+/* Background styling */
+.hidden {
+    display: none;
+}
+
+/* Mobile Styling */
+
+/* TODO: Sketch idea, block out wireframe, build with wireframe */
+
+
+/* Desktop Styling */
+@media screen and (min-width: 768px) {
+
+    /* Nav styling */
+    header {
+        padding: 0;
+    }
+
+    nav {
+        background-color: white;
+        display: flex;
+        width: 100%;
+        margin: 0;
+    }
+
+    nav ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        width: 100%;
+        height: fit-content;
+        display: flex;
+    }
+
+    /* Logo Section */
+    .logo {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        height: 90px;
+        max-width: 30%;
+        border-right: 1px black solid;
+    }
+
+    #logo {
+        align-self: flex-start;
+        justify-self: flex-start;
+        height: 100%;
+    }
+
+    /* Logo image, switch to SVG */
+    #logo img {
+        height: inherit;
+        max-height: 100px;
+        padding: 10px 0 10px 10px;
+    }
+
+    #logo-text {
+        width: 70%;
+        padding: 5px 0 5px 0;
+    }
+
+    /* Logo and Nav text */
+    nav ul li a {
+        text-decoration: none;
+        color: black;
+        margin: 0;
+    }
+
+    /* Selector section */
+    .selectors {
+        width: 50%;
+        height: inherit;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    select {
+        text-align: center;
+        width: 100%;
+        min-width: 15ch;
+        max-width: 30ch;
+        border: 1px solid var(--select-border);
+        border-radius: 0.25em;
+        padding: 0.25em 0.5em;
+        font-size: 1rem;
+        cursor: pointer;
+        background-color: #fff;
+        background-image: linear-gradient(to top, #f9f9f9, #eaeaea 33%);
+    }
+
+    /* Main Nav */
+    .main-nav {
+        width: 30%;
+        height: inherit;
+    }
+
+    .main-nav li {
+        height: 100%;
+        width: 100%;
+        border-left: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Main styling */
+    body {
+        margin: 0;
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+    }
+
+    main {
+        background-color: white;
+        color: black;
+        margin: 20px 30%;
+        align-self: center;
+        max-width: 70%;
+        min-width: 60%;
+        padding: 30px 50px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+    h1 {
+        text-align: center;
+        font-size: xxx-large;
+        flex: 1 1 100%;
+    }
+
+    .image-container {
+        width: 200px;
+        height: 300px;
+        flex: 1 1 20%;
+        justify-self: flex-end;
+    }
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    #content-one {
+        flex: 1 1 80%;
+        justify-self: flex-start;
+    }
+    span, pre {
+        margin-bottom: 50px;
+        flex: 1 1 100%;
+    }
+    span {
+        padding: 50px 0 0 50px;
+    }
+
+    /* Footer styling */
+    footer {
+        background-color: white;
+        min-height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .footer-logo {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        height: 90px;
+        flex: 1 1 auto;
+    }
+
+    .footer-logo img {
+        height: inherit;
+        width: fit-content;
+        padding: 10px 0 10px 10px;
+        margin: 0 10px 0 200px;
+    }
+
+    .footer-logo>a {
+        width: 70%;
+        padding: 5px 0 5px 0;
+        color: black;
+        text-decoration: none;
+    }
+
+    .links {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 100px;
+        align-items: center;
+        flex: 1 1 auto;
+        width: 100px;
+    }
+
+    .links img {
+        width: 50px;
+    }
+}
+
+/* media query device theme */
+
+
+span {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: inherit;
+}
+
+
+/* Code Formatting */
+pre {
+    background-color: #f4f4f4;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 5px;
+    border: 5px double black;
+    margin: 0 5%;
+}
+pre code {
+    white-space: pre-wrap;
+}
