@@ -7,6 +7,11 @@ function getLocalStorage(key) {
     return JSON.parse(value)
 }
 
+function cleanLocalStorage(key) {
+    localStorage.removeItem(key)
+}
+cleanLocalStorage('filter')
+
 const cardList = [
     { id: 1, title: 'lorem ipsum', tags: ['HTML', 'CSS', 'JavaScript'], thumbnail: 'https://picsum.photos/400/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
 
@@ -33,11 +38,11 @@ function generateHeader() {
             <ul class="selectors">
                 <li><label for="filter" class="hidden">Filter</label><select name="filter" id="filter">
                     <option value="default">Filter</option>
-                    <option value="html">HTML</option>
-                    <option value="css">CSS</option>
-                    <option value="js">JavaScript</option>
-                    <option value="python">Python</option>
-                    <option value="misc">Misc</option>
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                    <option value="Misc">Misc</option>
                 </select></li>
                 <li><label for="sort" class="hidden">Sort</label><select name="sort" id="sort">
                     <option value="default-sort">Sort</option>
@@ -113,51 +118,45 @@ function sortCards() {
     // Date Reverse
 }
 
+
+
+
 const filterSelector = document.body.querySelector('#filter')
-filterSelector.addEventListener('change', () => {
-    function filterCards(selectorElement) {
-        // Get filter choice
-        filterChoice = selectorElement.value.toLowerCase()
+function filterCards(selectorElement) {
+    // Get filter choice
+    filterChoice = selectorElement.value
+    cleanLocalStorage('filter')
+    if (filterChoice != 'default') {
+        setLocalStorage('filter', filterChoice)
         console.log(filterChoice)
-
-        if (filterChoice !== 'default') {
-            return cardList.filter(card => card.tags.includes(filterChoice))
-        }
-        else {
-            return cardList
-        }
-
+        const filteredCards = cardList.filter(card => card.tags.includes(filterChoice))
+        console.log(filteredCards)
+        generateCardList(filteredCards)
     }
+    else {
+        console.log(cardList)
+        generateCardList(cardList)
+    }
+
+}
+filterSelector.addEventListener('change', () => {
+   
 
     const filteredCards = filterCards(filterSelector)
-
-    function renderCards(cardsToDisplay) {
-        const container = document.getElementById('card-container');
-        // container.innerHTML = ''; // Clear existing cards
-
-        if (cardsToDisplay) {
-            cardsToDisplay.forEach(card => {
-                const cardElement = document.createElement('div');
-                cardElement.className = 'card';
-                cardElement.textContent = card.name;
-                container.appendChild(cardElement);
-            });
-        }
-    }
-    renderCards(filteredCards)
 })
 
-function generateCardList() {
-    cardList.forEach(item => {
+function generateCardList(list) {
+    const target = document.body.querySelector('.display')
+    target.innerHTML = ''
+    list.forEach(item => {
         const cardContent = generateCard(item)
-        const target = document.body.querySelector('.display')
         target.insertAdjacentHTML("beforeend", cardContent)
     })
 }
 
 // Call functions
-generateCardList()
 generateFooter()
+filterCards(filterSelector)
 
 
 
