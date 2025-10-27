@@ -13,13 +13,13 @@ function cleanLocalStorage(key) {
 cleanLocalStorage('filter')
 
 const cardList = [
-    { id: 1, title: 'lorem ipsum', tags: ['HTML', 'CSS', 'JavaScript'], thumbnail: 'https://picsum.photos/400/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
+    { id: 1, title: `Python Dictionaries`, tags: ['HTML', 'CSS', 'JavaScript'], thumbnail: 'https://picsum.photos/400/300', description: `Python dictionaries are a powerful, built-in data structure that stores data as key-value pairs. They are unordered (in Python versions before 3.7) or insertion-ordered (Python 3.7+), mutable, and highly optimized for retrieving values quickly using their unique keys. They're commonly used to represent real- world entities, like a person's attributes (name: 'Alice', age: 30), or to map one set of data to another.` },
 
-    { id: 2, title: 'lorem ipsum', tags: ['HTML', 'CSS'], thumbnail: 'https://picsum.photos/200/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
+    { id: 2, title: `What's the deal with JavaScript?`, tags: ['HTML', 'CSS'], thumbnail: 'https://picsum.photos/200/300', description: `JavaScript (JS) is a versatile, high-level, interpreted programming language primarily known as the language of the web, running natively in all major web browsers to create interactive and dynamic content. Beyond front-end web development, its popular runtime environment, Node.js, allows it to be used for server-side programming, enabling full-stack development using a single language.` },
 
-    { id: 3, title: 'lorem ipsum', tags: ['HTML', 'JavaScript'], thumbnail: 'https://picsum.photos/300/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
+    { id: 3, title: `Everything is Clickable`, tags: ['HTML', 'JavaScript'], thumbnail: 'https://picsum.photos/300/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
 
-    { id: 4, title: 'lorem ipsum', tags: ['Python'], thumbnail: 'https://picsum.photos/300/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' }
+    { id: 4, title: `Making a Basic Game`, tags: ['Python'], thumbnail: 'https://picsum.photos/300/300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' }
 ]
 
 lastPost = (cardList.length) - 1
@@ -32,8 +32,8 @@ function generateHeader() {
         <nav>
             <ul class="logo">
                 <li id="logo"><img src="/wdd131/vibe-coding/vibe-coding-resources/icons/icon.svg" alt="Logo" id="icon"></li>
-                <li id="logo-text"><a href="#">Vibe Coding</a></li>
-                <li id="logo-text"><a href="#">Development Log</a></li>
+                <li class="logo-text-one"><a href="#">Vibe Coding</a></li>
+                <li class="logo-text-two"><a href="#">Development Log</a></li>
             </ul>
             <ul class="selectors">
                 <li><label for="filter" class="hidden">Filter</label><select name="filter" id="filter">
@@ -47,9 +47,9 @@ function generateHeader() {
                 <li><label for="sort" class="hidden">Sort</label><select name="sort" id="sort">
                     <option value="default-sort">Sort</option>
                     <option value="alphabetical">Alphabetical</option>
-                    <option value="alphabetical">Alphabetical Reverse</option>
+                    <option value="alphabetical-reverse">Alphabetical Reverse</option>
                     <option value="date">Date</option>
-                    <option value="date">Date Reverse</option>
+                    <option value="date-reverse">Date Reverse</option>
                 </select></li>
             </ul>
             <ul class="main-nav">
@@ -68,8 +68,8 @@ function generateFooter() {
     const footerContent = `<footer>
         <div class="footer-logo">
             <img src="/wdd131/vibe-coding/vibe-coding-resources/icons/icon.svg" alt="Logo">
-            <a href="#">Vibe Coding</a>
-            <a href="#">Development Log</a>
+            <a href="#" class="logo-text-one">Vibe Coding</a>
+            <a href="#" class="logo-text-two">Development Log</a>
         </div>
         <div class="links">
             <a href="#"><img src="/wdd131/vibe-coding/vibe-coding-resources/icons/account_box.svg" alt="LinkedIn"></a>
@@ -106,18 +106,33 @@ function generateCard(card) {
 
 // Include sortCards() and filterCards() before rendering the list of cards. 
 
-function sortCards() {
+const sortSelector = document.body.querySelector('#sort')
+function sortCards(selectorElement) {
     // Get sort choice
-
+    const sortChoice = selectorElement.value
+    cleanLocalStorage('sort')
     // Alphabetical
-
+    if (sortChoice == 'alphabetical') {
+        cardList.sort((a, b) => a.title.localeCompare(b.title))
+    }
     // Alphabetical Reverse
-
-    // Date
-
+    if (sortChoice == 'alphabetical-reverse') {
+        cardList.sort((a, b) => b.title.localeCompare(a.title))
+    }
+    // Date (Default)
+    if (sortChoice == 'date' || sortChoice == 'default-sort') {
+        cardList.sort((a, b) => a.id - b.id)
+    }
     // Date Reverse
-}
+    if (sortChoice == 'date-reverse') {
+        cardList.sort((a, b) => b.id - a.id)
+    }
 
+    filterCards(filterSelector)
+}
+sortSelector.addEventListener('change', () => {
+    const sortedCards = sortCards(sortSelector)
+})
 
 
 
@@ -140,8 +155,6 @@ function filterCards(selectorElement) {
 
 }
 filterSelector.addEventListener('change', () => {
-   
-
     const filteredCards = filterCards(filterSelector)
 })
 
@@ -155,8 +168,8 @@ function generateCardList(list) {
 }
 
 // Call functions
+sortCards(sortSelector)
 generateFooter()
-filterCards(filterSelector)
 
 
 
