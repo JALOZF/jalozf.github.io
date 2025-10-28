@@ -72,15 +72,6 @@
 svg {
     max-width: 100px;
 }
-.f {
-    fill: var(--secondary-svg-color);
-}
-
-.g {
-    stroke: var(--primary-svg-color);
-    stroke-miterlimit: 10;
-    fill: var(--primary-svg-color);
-}
 
 /* Background styling */
 .hidden {
@@ -120,6 +111,7 @@ ul {
 
 .selectors {
     text-align: center;
+    height: inherit;
 }
 .selectors li {
     justify-content: center;
@@ -151,7 +143,7 @@ select {
 
 /* Main Content */
 .card {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--accent2-color);
     margin: 10% 10%;
     padding: 10px;
@@ -183,36 +175,165 @@ h1, h2, h3, h4 {
 footer {
     background-color: var(--primary-color);
     font-family: var(--paragraph-font);
-}
-
-footer {
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer-logo {
+    width: 75%;
     display: grid;
-    grid-template-areas: 
-    'logo text-one'
-    'logo text-two';
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+    height: inherit;
+    padding: 10px 0 10px 10px;
 }
-.footer-logo img {
-    grid-area: logo;
-    max-width: 40px;
+.footer-logo-img {
+    grid-column: 1 / 2;
+    grid-row: 1 / span 2;
+    justify-content: center;
 }
 .footer-logo a {
     text-decoration: none;
+    font-family: var(--paragraph-font);
     color: var(--accent2-color);
 }
-.logo-text-one {
-    grid-area: text-one;
+.footer-logo .logo-text-one {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-content: center;
 }
-.logo-text-two {
-    grid-area: text-two;
+.footer-logo .logo-text-two {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.links {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
 /* TODO: Sketch idea, block out wireframe, build with wireframe */
 
 
 /* Desktop Styling */
-@media screen and (min-width: 768px) {       
+@media screen and (min-width: 768px) {
+    .logo {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto;
+        height: inherit;
+        padding: 10px 0 10px 10px;
+    }
+    #logo {
+        grid-column: 1 / 2;
+        grid-row: 1 / span 2;
+        justify-content: center;
+    }
+    .logo a {
+        text-decoration: none;
+        font-family: var(--paragraph-font);
+        color: var(--accent2-color);
+    }
+    .logo .logo-text-one {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        justify-content: center;
+    }
+    .logo .logo-text-two {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+    .footer-logo {
+        width: 50%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto;
+        height: inherit;
+        padding: 10px 0 10px 10px;
+    }
+
+    .footer-logo-img {
+        grid-column: 1 / 2;
+        grid-row: 1 / span 2;
+        justify-content: center;
+    }
+
+    .footer-logo a {
+        text-decoration: none;
+        font-family: var(--paragraph-font);
+        color: var(--accent2-color);
+    }
+
+    .footer-logo .logo-text-one {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        justify-content: center;
+    }
+
+    .footer-logo .logo-text-two {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;   
+    }
+    .links {
+        width: 75%;
+        display: flex;
+        justify-content: space-around;   
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .main-nav {
+        flex-direction: row;
+    }
+    .main-nav li {
+        height: inherit;
+        width: 33%;
+        justify-content: center;
+        align-items: center;
+        padding-top: 8%;
+    }
+    .selectors {
+        display: flex;
+        width: 100%;
+        align-items: center;
+    }
+    .selectors li {
+        width: 50%;
+    }
+
+    
+    .card {
+        display: grid;
+        grid-template-areas:
+            'title title tags'
+            'img desc desc';
+    }
+    .title {
+        grid-area: title;
+    }
+    .tags {
+        grid-area: tags;
+    }
+    .thumbnail {
+        grid-area: img;
+        width: 100%;
+        height: 100%;
+        min-width: 300px;
+        min-height: 250px;
+    }
+    .description {
+        grid-area: desc;
+    }
+
+    footer {
+        flex-direction: row;
+    }
+    .links {
+        justify-content: space-evenly;
+    }
 }
