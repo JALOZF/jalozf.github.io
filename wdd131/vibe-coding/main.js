@@ -31,21 +31,9 @@ function generateHeader() {
     const headerContent = `<header>
         <nav>
             <ul class="logo">
-                <li id="logo"><a href ="#">
+                <li id="logo"><a href ="./">
                 <?xml version="1.0" encoding="UTF-8"?>
                 <svg id="a" data-name="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 308.96">
-                <!-- <defs>
-                    <style>
-                    .f {
-                        fill: #fff;
-                    }
-
-                    .g {
-                        stroke: #000;
-                        stroke-miterlimit: 10;
-                    }
-                    </style>
-                </defs> -->
                 <g id="b" data-name="Back">
                     <rect class="g" width="375" height="251.84" rx="15" ry="15"/>
                 </g>
@@ -72,8 +60,8 @@ function generateHeader() {
                     </g>
                 </g>
                 </svg></a></li>
-                <li class="logo-text-one"><a href="#">Vibe Coding</a></li>
-                <li class="logo-text-two"><a href="#">Development Log</a></li>
+                <li class="logo-text-one"><a href="./">Vibe Coding</a></li>
+                <li class="logo-text-two"><a href="./">Development Log</a></li>
             </ul>
             <ul class="selectors">
                 <li><label for="filter" class="hidden">Filter</label><select name="filter" id="filter">
@@ -107,21 +95,10 @@ generateHeader()
 function generateFooter() {
     const footerContent = `<footer>
         <div class="footer-logo">
-            <a href="#" class="footer-logo-img">
+            <a href="./" class="footer-logo-img">
             <?xml version="1.0" encoding="UTF-8"?>
                 <svg id="a" data-name="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 308.96">
-                <!-- <defs>
-                    <style>
-                    .f {
-                        fill: #fff;
-                    }
-
-                    .g {
-                        stroke: #000;
-                        stroke-miterlimit: 10;
-                    }
-                    </style>
-                </defs> -->
+                
                 <g id="b" data-name="Back">
                     <rect class="g" width="375" height="251.84" rx="15" ry="15"/>
                 </g>
@@ -149,19 +126,19 @@ function generateFooter() {
                 </g>
                 </svg>
                 </a>
-            <a href="#" class="logo-text-one">Vibe Coding</a>
-            <a href="#" class="logo-text-two">Development Log</a>
+            <a href="./" class="logo-text-one">Vibe Coding</a>
+            <a href="./" class="logo-text-two">Development Log</a>
         </div>
         <div class="links">
-            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000" id="account-box">
+            <a href="https://linkedin.com/in/daniel-checketts" target="_blank" rel="noopener noreferer"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000" id="account-box">
             <path
                 d="M480-440q58 0 99-41t41-99q0-58-41-99t-99-41q-58 0-99 41t-41 99q0 58 41 99t99 41ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-46q-54-53-125.5-83.5T480-360q-83 0-154.5 30.5T200-246v46Z" />
         </svg></a>
-            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000" id="cloud">
+            <a href="https://github.com/nocstraznik" target="_blank" rel="noopener noreferer"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000" id="cloud">
             <path
                 d="M260-160q-91 0-155.5-63T40-377q0-78 47-139t123-78q25-92 100-149t170-57q117 0 198.5 81.5T760-520q69 8 114.5 59.5T920-340q0 75-52.5 127.5T740-160H260Z" />
         </svg></a>
-            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000" id="mail">
+            <a href="mailto:danielkchecketts@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000" id="mail">
             <path
                 d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280 320-200v-80L480-520 160-720v80l320 200Z" />
         </svg></a>

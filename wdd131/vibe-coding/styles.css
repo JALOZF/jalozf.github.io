@@ -112,6 +112,8 @@ ul {
 .selectors {
     text-align: center;
     height: inherit;
+    width: 50%;
+    border: 1px solid --accent2-color;
 }
 .selectors li {
     justify-content: center;
@@ -127,6 +129,7 @@ select {
 .main-nav {
     text-align: center;
     height: inherit;
+    width: 50%;
     display: flex;
     flex-flow: column nowrap;
 }
@@ -228,11 +231,13 @@ footer {
         grid-template-rows: auto auto;
         height: inherit;
         padding: 10px 0 10px 10px;
+        border: 1px solid --accent2-color;
     }
     #logo {
         grid-column: 1 / 2;
         grid-row: 1 / span 2;
         justify-content: center;
+        align-items: right;
     }
     .logo a {
         text-decoration: none;
