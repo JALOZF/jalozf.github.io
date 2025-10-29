@@ -49,8 +49,8 @@ function generateHeader() {
                 </g>
             </g>
             </svg></a></li>
-            <li class="logo-text-one"><a href="#">Vibe Coding</a></li>
-            <li class="logo-text-two"><a href="#">Development Log</a></li>
+            <li class="logo-text-one"><a href="../">Vibe Coding</a></li>
+            <li class="logo-text-two"><a href="../">Development Log</a></li>
         </ul>
         <ul class="selectors">
             <li><label for="filter" class="hidden">Filter</label><select name="filter" id="filter">
@@ -202,6 +202,21 @@ const posts = [
         title: "Everything is Clickable", 
         content: `<main>
         <h1>Everything is Clickable</h1>
+        <span>Most of the time, click events don't happen unless you're using an anchor tag, or a button. HTMX, on the other hand</span>
+        <div class="image-container">
+            <img src="#" alt="Placeholder">
+        </div>
+        <span>Placeholder</span>
+        <pre><code>
+            print('Hello World!')
+        </code></pre>
+        <span>Placeholder</span>
+    </main>` },
+    {
+        id: 4,
+        title: "Making a Basic Game",
+        content: `<main>
+        <h1>Making a Basic Games</h1>
         <span>Most of the time, click events don't happen unless you're using an anchor tag, or a button. HTMX, on the other hand</span>
         <div class="image-container">
             <img src="#" alt="Placeholder">
