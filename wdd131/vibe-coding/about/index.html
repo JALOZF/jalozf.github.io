@@ -7,9 +7,63 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="vibe-coding-resources/icons/favicon.svg">
     <script src="main.js" defer></script>
+    <style>
+        /* Logo manipulation */
+        svg {
+            max-width: 100px;
+        }
+        #account-box,
+        #cloud,
+        #mail {
+            fill: light-dark(black, white);
+            transition: fill 0.3s ease;
+        }
+    
+        .f {
+            fill: light-dark(white, black);
+        }
+    
+        .g {
+            stroke: light-dark(black, white);
+            stroke-miterlimit: 10;
+            fill: light-dark(black, white);
+        }
+    
+        @media screen and (min-width: 768px) {
+    
+            #account-box:hover,
+            #cloud:hover,
+            #mail:hover {
+                fill: grey;
+    
+            }
+        }
+    </style>
 </head>
 <body>
     <main>
+        <h1>About</h1>
+        <div class="row-container">
+            <img src="/wdd131/vibe-coding/vibe-coding-resources/images/251016_CareerFairHeadshots_385-min.jpg" alt="Me">
+            <p>Hi there! My name is Daniel, and I built this site! It initially started as a final project for a class I was taking in college, but I plan on growing it as I learn more about website design and development.</p>
+        </div>
+        <h2>Getting to Know Me</h2>
+        <p class="question">Q: What inspired you to study web design and development?</p>
+        <p class="answer">A: My dad is a computer programmer, so I've grown up around computers and programming has always been something that I've wanted to do. I did a couple of semesters studying computer information technology before serving a mission for The Church of Jesus Christ of Latter-Day Saints for a couple of years. Afterwards, I decided that I wanted to do a major where the classes were more focused on working directly with code.</p>
+        <p class="question">Q: How did you get started with building websites?</p>
+        <p class="answer">A: I took an introductory web design and development class during my second semester that was I found pretty fun, and so I decided that I wanted to try working more with that.</p>
+        <p class="question">Q: What do you enjoy most about designing or coding websites?</p>
+        <p class="answer">A: I honestly find it a lot of fun to just work on the code. :D</p>
+        <p class="question">Q: What tools or technologies do you use most often?</p>
+        <p class="answer">A: I've mostly just been working on learning HTML, CSS, JavaScript, and Python currently. Most of my projects will probably just use those. I'm trying to learn HTMX, Tailwind, and React, so hopefully I'll get something with those sometime!</p>
+        <p class="question">Q: What's your favorite project you've worked on, and why?</p>
+        <p class="answer">A: Probably this site! It's been a much bigger project than I've done before, but it's been a lot of fun to try building it with what I've been learning about in my classes.</p>
+        <p class="question">Q: What non-coding hobbies or interests do you have?</p>
+        <p class="answer">A: I enjoy reading and writing science fiction and fantasy. As a result, I have two short stories published! Additionally, I enjoy hiking and I'm trying to get into photography, so I might make a project related to that</p>
+        <p class="question">Q: If you could master any new skill (not limited to web development), what would it be?</p>
+        <p class="answer">A: I would probably have to go with Spanish. I have a little experience with it, but a toddler could definitely speak more than I can.</p>
+        <p class="question">Q: What's your go-to productivity tip or trick?</p>
+        <p class="answer">A: Out of sight, out of mind. Make what you have to do easier than what could distract you, be it through blockers or changing your location. (Which really helps!)</p>
     </main>    
 </body>
 </html>

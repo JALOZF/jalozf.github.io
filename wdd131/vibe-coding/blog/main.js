@@ -154,24 +154,26 @@ const posts = [
         id: 1, 
         title: "What is a Python Dictionary?", content: `<main>
         <h1>What is a Python Dictionary?</h1>
-        <span id="content-one">Dictionaries are one of Python's most flexible and frequently used built-in data
-            structures. If you've ever dealt with a phone book, a real-life dictionary, or a database, you already understand the core concept: they store data as pairs—a way to look up a value using a specific key. Each item in the dictionary is a key-value pair.</span>
+        <div class="row-container">
+            <p>A Python dictionary is a built-in data structure that lets you store data as key-value pairs.
+            You can think of it like a phone book, where you use a person's name (the key) to look up their phone number (the value).</p>
+
             <div class="image-container">
-                <img src="https://cdn.pixabay.com/photo/2014/07/11/23/06/definition-390785_1280.jpg" alt="Thumbnail" id="thumbnail">
+                <img src="https://cdn.pixabay.com/photo/2014/07/11/23/06/definition-390785_1280.jpg" alt="Thumbnail">
             </div>
-        <span id="content-two">
-            Some good things to know:
-            <ul>
-                <li>Dictionaries are good at representing objects that have information like users in a system.</li>
-                <li>Each key must be unique.</li>
-                <li>Each key must be immutable.</li>
-            </ul>
+        </div>
 
-            Below is an example of a simple dictionary.
+        <h2>Key features of Python Dictionaries</h2>
+        <ul>
+            <li>Fast lookups: Quickly access values by their keys—no searching through lists required.</li>
+            <li>Flexible data storage: You can store numbers, strings, lists, or even other dictionaries as values.</li>
+            <li>Unique, immutable keys: Every key in a dictionary must be unique and cannot change (strings, numbers, and tuples
+                work great as keys).</li>
+        </ul>
 
-        </span>
-
-        <pre id="code-one"><code>
+    <h2>Real-Life Example</h2>
+    <p>Suppose you're tracking a student in a class. Here's how you might use a dictionary:</p>
+        <pre><code>
     student_profile = {
         "name": "Alex Johnson",
         "student_id": "A123456",
@@ -179,53 +181,221 @@ const posts = [
         "gpa": 3.85,
         "courses": ["Data Structures", "Algorithms", "Database Systems"]
     }
-                    </code></pre>
+        </code></pre>
+    
+        <p>This one object holds all the information for a student and makes it easy to access anything you need:</p>
 
-        <span id="content-three">Content 3</span>
+        <ul>
+            <li><code>student_profile["name"]</code> gives you <code>"Alex Johnson"</code></li>
+            <li><code>student_profile["courses"]</code> returns <code>["Data Structures", "Algorithms", "Database Systems"]</code></li>
+        </ul>
+    
+        <h2>Common Dictionary Operations</h2>
+        <ul>
+            <li>Add a new key-value pair: <code>student_profile["email"] = "alex.johnson@example.edu"</code></li>
+            <li>Update a value: <code>student_profile["gpa"] =3.95</code></li>
+            <li>Delete a key-value pair: <code>del student_profile["major"]</code></li>
+            <li>Loop through items: 
+                <pre><code>
+for key, value in student_profile.items():
+    print(f"{key}: {value}")
+                </code></pre>
+            </li>
+        </ul>
+        <h2>When Should You Use a Dictionary?</h2>
+        <ul>
+            <li>When you want to associate unique keys with values (like IDs, names, labels).</li>
+            <li>When you need to quickly look up or update data by key.</li>
+            <li>When modeling objects with lots of different properties.</li>
+        </ul>
+        <p>Python dictionaries are powerful tools for structuring and managing information. Mastering them will make your
+        programming much more efficient and expressive. Try creating a few dictionaries today—and see how easy organizing data
+        can be!</p>
     </main>`}, 
     {
         id: 2, 
         title: "What's the deal with JavaScript?", content: `<main>
-        <h1>Title</h1>
-        <span>Placeholder</span>
-        <div class="image-container">
-            <img src="#" alt="Placeholder">
+        <h1>What is a Python Dictionary?</h1>
+        <div class="row-container">
+            <p>A Python dictionary is a built-in data structure that lets you store data as key-value pairs.
+            You can think of it like a phone book, where you use a person's name (the key) to look up their phone number (the value).</p>
+
+            <div class="image-container">
+                <img src="https://cdn.pixabay.com/photo/2014/07/11/23/06/definition-390785_1280.jpg" alt="Thumbnail">
+            </div>
         </div>
-        <span>Placeholder</span>
+        <p>Key features of Python Dictionaries: </p>
+        <ul>
+            <li>Fast lookups: Quickly access values by their keys—no searching through lists required.</li>
+            <li>Flexible data storage: You can store numbers, strings, lists, or even other dictionaries as values.</li>
+            <li>Unique, immutable keys: Every key in a dictionary must be unique and cannot change (strings, numbers, and tuples
+                work great as keys).</li>
+        </ul>
+
+    <h2>Real-Life Example</h2>
+    <p>Suppose you're tracking a student in a class. Here's how you might use a dictionary:</p>
         <pre><code>
-            print('Hello World!')
+    student_profile = {
+        "name": "Alex Johnson",
+        "student_id": "A123456",
+        "major": "Computer Science",
+        "gpa": 3.85,
+        "courses": ["Data Structures", "Algorithms", "Database Systems"]
+    }
         </code></pre>
-        <span>Placeholder</span>
+    
+        <p>This one object holds all the information for a student and makes it easy to access anything you need:</p>
+
+        <ul>
+            <li><code>student_profile["name"]</code> gives you <code>"Alex Johnson"</code></li>
+            <li><code>student_profile["courses"]</code> returns <code>["Data Structures", "Algorithms", "Database Systems"]</code></li>
+        </ul>
+    
+        <h2>Common Dictionary Operations</h2>
+        <ul>
+            <li>Add a new key-value pair: <code>student_profile["email"] = "alex.johnson@example.edu"</code></li>
+            <li>Update a value: <code>student_profile["gpa"] =3.95</code></li>
+            <li>Delete a key-value pair: <code>del student_profile["major"]</code></li>
+            <li>Loop through items: 
+                <pre><code>
+for key, value in student_profile.items():
+    print(f"{key}: {value}")
+                </code></pre>
+            </li>
+        </ul>
+        <h2>When Should You Use a Dictionary?</h2>
+        <ul>
+            <li>When you want to associate unique keys with values (like IDs, names, labels).</li>
+            <li>When you need to quickly look up or update data by key.</li>
+            <li>When modeling objects with lots of different properties.</li>
+        </ul>
+        <p>Python dictionaries are powerful tools for structuring and managing information. Mastering them will make your
+        programming much more efficient and expressive. Try creating a few dictionaries today—and see how easy organizing data
+        can be!</p>
     </main>` },
     {
         id: 3, 
         title: "Everything is Clickable", 
         content: `<main>
-        <h1>Everything is Clickable</h1>
-        <span>Most of the time, click events don't happen unless you're using an anchor tag, or a button. HTMX, on the other hand</span>
-        <div class="image-container">
-            <img src="#" alt="Placeholder">
+        <h1>What is a Python Dictionary?</h1>
+        <div class="row-container">
+            <p>A Python dictionary is a built-in data structure that lets you store data as key-value pairs.
+            You can think of it like a phone book, where you use a person's name (the key) to look up their phone number (the value).</p>
+
+            <div class="image-container">
+                <img src="https://cdn.pixabay.com/photo/2014/07/11/23/06/definition-390785_1280.jpg" alt="Thumbnail">
+            </div>
         </div>
-        <span>Placeholder</span>
+        <p>Key features of Python Dictionaries: </p>
+        <ul>
+            <li>Fast lookups: Quickly access values by their keys—no searching through lists required.</li>
+            <li>Flexible data storage: You can store numbers, strings, lists, or even other dictionaries as values.</li>
+            <li>Unique, immutable keys: Every key in a dictionary must be unique and cannot change (strings, numbers, and tuples
+                work great as keys).</li>
+        </ul>
+
+    <h2>Real-Life Example</h2>
+    <p>Suppose you're tracking a student in a class. Here's how you might use a dictionary:</p>
         <pre><code>
-            print('Hello World!')
+    student_profile = {
+        "name": "Alex Johnson",
+        "student_id": "A123456",
+        "major": "Computer Science",
+        "gpa": 3.85,
+        "courses": ["Data Structures", "Algorithms", "Database Systems"]
+    }
         </code></pre>
-        <span>Placeholder</span>
+    
+        <p>This one object holds all the information for a student and makes it easy to access anything you need:</p>
+
+        <ul>
+            <li><code>student_profile["name"]</code> gives you <code>"Alex Johnson"</code></li>
+            <li><code>student_profile["courses"]</code> returns <code>["Data Structures", "Algorithms", "Database Systems"]</code></li>
+        </ul>
+    
+        <h2>Common Dictionary Operations</h2>
+        <ul>
+            <li>Add a new key-value pair: <code>student_profile["email"] = "alex.johnson@example.edu"</code></li>
+            <li>Update a value: <code>student_profile["gpa"] =3.95</code></li>
+            <li>Delete a key-value pair: <code>del student_profile["major"]</code></li>
+            <li>Loop through items: 
+                <pre><code>
+for key, value in student_profile.items():
+    print(f"{key}: {value}")
+                </code></pre>
+            </li>
+        </ul>
+        <h2>When Should You Use a Dictionary?</h2>
+        <ul>
+            <li>When you want to associate unique keys with values (like IDs, names, labels).</li>
+            <li>When you need to quickly look up or update data by key.</li>
+            <li>When modeling objects with lots of different properties.</li>
+        </ul>
+        <p>Python dictionaries are powerful tools for structuring and managing information. Mastering them will make your
+        programming much more efficient and expressive. Try creating a few dictionaries today—and see how easy organizing data
+        can be!</p>
     </main>` },
     {
         id: 4,
         title: "Making a Basic Game",
         content: `<main>
-        <h1>Making a Basic Games</h1>
-        <span>Most of the time, click events don't happen unless you're using an anchor tag, or a button. HTMX, on the other hand</span>
-        <div class="image-container">
-            <img src="#" alt="Placeholder">
+        <h1>What is a Python Dictionary?</h1>
+        <div class="row-container">
+            <p>A Python dictionary is a built-in data structure that lets you store data as key-value pairs.
+            You can think of it like a phone book, where you use a person's name (the key) to look up their phone number (the value).</p>
+
+            <div class="image-container">
+                <img src="https://cdn.pixabay.com/photo/2014/07/11/23/06/definition-390785_1280.jpg" alt="Thumbnail">
+            </div>
         </div>
-        <span>Placeholder</span>
+        <p>Key features of Python Dictionaries: </p>
+        <ul>
+            <li>Fast lookups: Quickly access values by their keys—no searching through lists required.</li>
+            <li>Flexible data storage: You can store numbers, strings, lists, or even other dictionaries as values.</li>
+            <li>Unique, immutable keys: Every key in a dictionary must be unique and cannot change (strings, numbers, and tuples
+                work great as keys).</li>
+        </ul>
+
+    <h2>Real-Life Example</h2>
+    <p>Suppose you're tracking a student in a class. Here's how you might use a dictionary:</p>
         <pre><code>
-            print('Hello World!')
+    student_profile = {
+        "name": "Alex Johnson",
+        "student_id": "A123456",
+        "major": "Computer Science",
+        "gpa": 3.85,
+        "courses": ["Data Structures", "Algorithms", "Database Systems"]
+    }
         </code></pre>
-        <span>Placeholder</span>
+    
+        <p>This one object holds all the information for a student and makes it easy to access anything you need:</p>
+
+        <ul>
+            <li><code>student_profile["name"]</code> gives you <code>"Alex Johnson"</code></li>
+            <li><code>student_profile["courses"]</code> returns <code>["Data Structures", "Algorithms", "Database Systems"]</code></li>
+        </ul>
+    
+        <h2>Common Dictionary Operations</h2>
+        <ul>
+            <li>Add a new key-value pair: <code>student_profile["email"] = "alex.johnson@example.edu"</code></li>
+            <li>Update a value: <code>student_profile["gpa"] =3.95</code></li>
+            <li>Delete a key-value pair: <code>del student_profile["major"]</code></li>
+            <li>Loop through items: 
+                <pre><code>
+for key, value in student_profile.items():
+    print(f"{key}: {value}")
+                </code></pre>
+            </li>
+        </ul>
+        <h2>When Should You Use a Dictionary?</h2>
+        <ul>
+            <li>When you want to associate unique keys with values (like IDs, names, labels).</li>
+            <li>When you need to quickly look up or update data by key.</li>
+            <li>When modeling objects with lots of different properties.</li>
+        </ul>
+        <p>Python dictionaries are powerful tools for structuring and managing information. Mastering them will make your
+        programming much more efficient and expressive. Try creating a few dictionaries today—and see how easy organizing data
+        can be!</p>
     </main>` }
 ]
 

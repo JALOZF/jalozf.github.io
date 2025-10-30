@@ -21,22 +21,60 @@
     </style>
 </head>
 <body>
-    <footer>
-        <div>
-        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000" id="account-box">
-        <path
-            d="M480-440q58 0 99-41t41-99q0-58-41-99t-99-41q-58 0-99 41t-41 99q0 58 41 99t99 41ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-46q-54-53-125.5-83.5T480-360q-83 0-154.5 30.5T200-246v46Z" />
-    </svg>
-    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000" id="cloud">
-        <path
-            d="M260-160q-91 0-155.5-63T40-377q0-78 47-139t123-78q25-92 100-149t170-57q117 0 198.5 81.5T760-520q69 8 114.5 59.5T920-340q0 75-52.5 127.5T740-160H260Z" />
-    </svg>
-    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000" id="mail">
-        <path
-            d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280 320-200v-80L480-520 160-720v80l320 200Z" />
-    </svg>
-    </div>
-    </footer>
+    <main>
+        <h1>What is a Python Dictionary?</h1>
+        <p>A Python dictionary is a built-in data structure that lets you store data as key-value pairs.
+        You can think of it like a phone book, where you use a person's name (the key) to look up their phone number (the value).</p>
+
+        <div class="image-container">
+            <img src="https://cdn.pixabay.com/photo/2014/07/11/23/06/definition-390785_1280.jpg" alt="Thumbnail">
+        </div>
+        <p>Key features of Python Dictionaries: </p>
+        <ul>
+            <li>Fast lookups: Quickly access values by their keys—no searching through lists required.</li>
+            <li>Flexible data storage: You can store numbers, strings, lists, or even other dictionaries as values.</li>
+            <li>Unique, immutable keys: Every key in a dictionary must be unique and cannot change (strings, numbers, and tuples
+                work great as keys).</li>
+        </ul>
+
+    <h2>Real-Life Example</h2>
+    <p>Suppose you're tracking a student in a class. Here's how you might use a dictionary:</p>
+        <pre><code>
+        student_profile = {
+        "name": "Alex Johnson",
+        "student_id": "A123456",
+        "major": "Computer Science",
+        "gpa": 3.85,
+        "courses": ["Data Structures", "Algorithms", "Database Systems"]
+        }
+
+                        </code></pre>
     
+        <p>This one object holds all the information for a student and makes it easy to access anything you need:</p>
+
+        <ul>
+            <li><code>student_profile["name"]</code> gives you <code>"Alex Johnson"</code></li>
+            <li><code>student_profile["courses"]</code> returns <code>["Data Structures", "Algorithms", "Database Systems"]</code></li>
+        </ul>
+    
+        <h2>Common Dictionary Operations</h2>
+        <ul>
+            <li>Add a new key-value pair: <code>student_profile["email"] = "alex.johnson@example.edu"</code></li>
+            <li>Update a value: <code>student_profile["gpa"] =3.95</code></li>
+            <li>Delete a key-value pair: <code>del student_profile["major"]</code></li>
+            <li>Loop through items: <pre><code>for key, value in student_profile.items():
+            print(f"{key}: {value}")
+            </code></pre></li>
+        </ul>
+        <h2>When Should You Use a Dictionary?</h2>
+        <ul>
+            <li>When you want to associate unique keys with values (like IDs, names, labels).</li>
+            <li>When you need to quickly look up or update data by key.</li>
+            <li>When modeling objects with lots of different properties.</li>
+        </ul>
+        <p>Python dictionaries are powerful tools for structuring and managing information. Mastering them will make your
+        programming much more efficient and expressive. Try creating a few dictionaries today—and see how easy organizing data
+        can be!</p>
+    </main>
 </body>
 </html>

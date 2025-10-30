@@ -59,7 +59,9 @@
     --select-arrow: var(--select-border);
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -72,6 +74,7 @@ body {
 .hidden {
     display: none;
 }
+
 .invisible {
     text-decoration: none;
     color: inherit;
@@ -87,6 +90,9 @@ body {
 
 /* Mobile Styling */
 
+.question {
+    margin: 10px 0;
+}
 
 /* Nav Styling */
 nav {
@@ -145,23 +151,25 @@ main {
     width: 75%;
     align-items: center;
 }
-.row-container p, .row-container div {
+
+.row-container p,
+.row-container div {
     width: 50%;
 }
 
-p, span, li {
+p,
+span,
+li {
     font-family: var(--paragraph-font);
 }
 
 p {
     margin: 0 20px;
-    width: 75%;
+    width: 50%;
 }
 
 h1,
-h2,
-h3,
-h4 {
+h2 {
     font-family: var(--heading-font);
     padding-bottom: 5px;
     text-align: center;
@@ -169,31 +177,13 @@ h4 {
 
 img {
     align-self: center;
-    width: 100%;
+    width: 30%;
     height: 75%;
     object-fit: cover;
     object-position: center;
     padding: 20px 0;
 }
 
-pre {
-    justify-self: center;
-    width: inherit;
-    white-space: pre-wrap;
-    border: 2px groove black;
-    border-radius: 5px;
-    padding: 10px;
-}
-
-li > code {
-    overflow-wrap: break-word;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: var(--primary-color);
-}
-li {
-    padding: 10px;
-}
 
 /* Footer */
 footer {
@@ -287,10 +277,12 @@ footer {
         height: inherit;
         border: 1px solid black;
     }
+
     .selectors li {
         justify-content: center;
         align-items: center;
     }
+
     select {
         width: 75%;
         height: inherit;
@@ -358,34 +350,6 @@ footer {
 
     .selectors li {
         width: 50%;
-    }
-
-
-    .card {
-        display: grid;
-        grid-template-areas:
-            'title title tags'
-            'img desc desc';
-    }
-
-    .title {
-        grid-area: title;
-    }
-
-    .tags {
-        grid-area: tags;
-    }
-
-    .thumbnail {
-        grid-area: img;
-        width: 100%;
-        height: 100%;
-        min-width: 300px;
-        min-height: 250px;
-    }
-
-    .description {
-        grid-area: desc;
     }
 
     footer {
