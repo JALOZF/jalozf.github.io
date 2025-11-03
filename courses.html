@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,39 +12,48 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+
         /* Ensures the chart maintains a good aspect ratio on mobile, but has max height on desktop */
         .chart-container {
             position: relative;
             width: 100%;
             max-width: 500px;
-            height: 300px; /* Slightly reduced height for mobile to save vertical space */
+            height: 300px;
+            /* Slightly reduced height for mobile to save vertical space */
             max-height: 400px;
             margin-left: auto;
             margin-right: auto;
         }
+
         @media (min-width: 768px) {
             .chart-container {
-                height: 350px; /* Slightly taller on desktop */
+                height: 350px;
+                /* Slightly taller on desktop */
             }
         }
+
         .cert-badge {
             background-color: #FFD166;
             color: #073B4C;
         }
+
         .timeline-card {
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
             border-left: 6px solid #118AB2;
-            scroll-margin-top: 100px; 
+            scroll-margin-top: 100px;
         }
+
         .timeline-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
+
         .bg-gradient-header {
             background: linear-gradient(90deg, #118AB2 0%, #06D6A0 100%);
         }
     </style>
 </head>
+
 <body class="bg-slate-100 text-[#073B4C]">
 
     <!-- Header: Optimized for mobile scaling -->
@@ -79,26 +89,29 @@
                     </div>
                 </div>
                 <p class="mt-4 text-sm md:text-lg text-slate-700 max-w-3xl mx-auto">
-                    This interactive plan outlines your 11-semester journey, strategically stacking <b>five professional certificates</b> to build your resume and portfolio as you progress toward graduation in Winter 2029.
+                    This interactive plan outlines your 11-semester journey, strategically stacking <b>five professional
+                    certificates</b> to build your resume and portfolio as you progress toward graduation in Winter 2029.
                 </p>
             </div>
         </section>
 
         <!-- Breakdown Charts: Stacks on mobile, uses full width -->
         <section id="breakdown" class="mb-8 md:mb-12">
-            <h2 class="text-xl md:text-3xl font-bold text-center text-[#118AB2] mb-6">Part 1: Your 120-Credit Breakdown</h2>
+            <h2 class="text-xl md:text-3xl font-bold text-center text-[#118AB2] mb-6">Part 1: Your 120-Credit Breakdown
+            </h2>
             <p class="text-sm md:text-lg text-slate-700 max-w-3xl mx-auto text-center mb-6">
-                Your degree is a precise blend of Major-specific courses and university-wide General Education requirements.
+                Your degree is a precise blend of Major-specific courses and university-wide General Education
+                requirements.
             </p>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
-                
+
                 <div class="bg-white rounded-xl shadow-md p-4 sm:p-6">
                     <h3 class="text-lg font-bold text-center text-[#073B4C] mb-4">Overall Credit Composition</h3>
                     <div class="chart-container">
                         <canvas id="overallCreditsChart"></canvas>
                     </div>
                 </div>
-                
+
                 <div class="bg-white rounded-xl shadow-md p-4 sm:p-6">
                     <h3 class="text-lg font-bold text-center text-[#073B4C] mb-4">Major Credits (77.5)</h3>
                     <div class="chart-container">
@@ -117,10 +130,12 @@
 
         <!-- Timeline Chart: Full width chart area -->
         <section id="timeline-chart" class="mb-8 md:mb-12">
-            <h2 class="text-xl md:text-3xl font-bold text-center text-[#118AB2] mb-6">Part 2: Your Semester Workload & Interactive Map</h2>
+            <h2 class="text-xl md:text-3xl font-bold text-center text-[#118AB2] mb-6">Part 2: Your Semester Workload &
+                Interactive Map</h2>
             <div class="bg-white rounded-xl shadow-md p-4 sm:p-6">
                 <p class="text-sm md:text-lg text-slate-700 max-w-3xl mx-auto text-center mb-4">
-                    <b>Click on any point</b> in the line chart to instantly scroll to the detailed milestone card for that semester.
+                    <b>Click on any point</b> in the line chart to instantly scroll to the detailed milestone card for that
+                    semester.
                 </p>
                 <!-- Chart height is managed by the style block -->
                 <div class="w-full max-w-6xl mx-auto" style="height: 350px;">
@@ -131,16 +146,20 @@
 
         <!-- Milestones: Responsive grid for card stacking (3 columns on desktop, 1 on mobile) -->
         <section id="milestones" class="mb-8 md:mb-12">
-            <h2 class="text-xl md:text-3xl font-bold text-center text-[#118AB2] mb-6">Part 3: Detailed Credential Achievement Timeline</h2>
-            
+            <h2 class="text-xl md:text-3xl font-bold text-center text-[#118AB2] mb-6">Part 3: Detailed Credential
+                Achievement Timeline</h2>
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
 
-                <div id="milestone-S2" class="timeline-card bg-white rounded-xl shadow-lg p-4 sm:p-6 flex flex-col justify-between">
+                <div id="milestone-S2"
+                    class="timeline-card bg-white rounded-xl shadow-lg p-4 sm:p-6 flex flex-col justify-between">
                     <div>
-                        <span class="text-xs font-semibold px-2 py-0.5 rounded-full cert-badge">S2 (Spring 2026) • 9.0 Cr</span>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded-full cert-badge">S2 (Spring 2026) • 9.0
+                            Cr</span>
                         <h3 class="text-lg font-bold text-[#073B4C] mt-2 mb-1">Frontend & Programming Mastery</h3>
                         <p class="text-xs sm:text-sm text-slate-600 mb-3">
-                            You achieve foundational mastery in client-side development and object-oriented programming simultaneously.
+                            You achieve foundational mastery in client-side development and object-oriented programming
+                            simultaneously.
                         </p>
                         <h4 class="text-sm font-semibold text-[#118AB2] mb-2">Courses Completed:</h4>
                         <ul class="list-disc list-inside text-xs sm:text-sm text-slate-700 space-y-0.5">
@@ -155,12 +174,16 @@
                     </div>
                 </div>
 
-                <div id="milestone-S5" class="timeline-card bg-white rounded-xl shadow-lg p-4 sm:p-6 flex flex-col justify-between" style="border-left: 6px solid #06D6A0;">
+                <div id="milestone-S5"
+                    class="timeline-card bg-white rounded-xl shadow-lg p-4 sm:p-6 flex flex-col justify-between"
+                    style="border-left: 6px solid #06D6A0;">
                     <div>
-                        <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#06D6A0] text-white">S5 (Spring 2027) • 10.5 Cr</span>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#06D6A0] text-white">S5 (Spring
+                            2027) • 10.5 Cr</span>
                         <h3 class="text-lg font-bold text-[#073B4C] mt-2 mb-1">Design & Full Stack Foundations</h3>
                         <p class="text-xs sm:text-sm text-slate-600 mb-3">
-                            The capstone of your visual design studies and the core introduction to end-to-end web architecture.
+                            The capstone of your visual design studies and the core introduction to end-to-end web
+                            architecture.
                         </p>
                         <h4 class="text-sm font-semibold text-[#118AB2] mb-2">Courses Completed:</h4>
                         <ul class="list-disc list-inside text-xs sm:text-sm text-slate-700 space-y-0.5">
@@ -174,9 +197,11 @@
                     </div>
                 </div>
 
-                <div id="milestone-S6" class="timeline-card bg-white rounded-xl shadow-lg p-4 sm:p-6 flex flex-col justify-between">
+                <div id="milestone-S6"
+                    class="timeline-card bg-white rounded-xl shadow-lg p-4 sm:p-6 flex flex-col justify-between">
                     <div>
-                        <span class="text-xs font-semibold px-2 py-0.5 rounded-full cert-badge">S6 (Fall 2027) • 11.0 Cr</span>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded-full cert-badge">S6 (Fall 2027) • 11.0
+                            Cr</span>
                         <h3 class="text-lg font-bold text-[#073B4C] mt-2 mb-1">Full Stack Completion</h3>
                         <p class="text-xs sm:text-sm text-slate-600 mb-3">
                             You finalize your most demanding technical credential and begin the specialized UX sequence.
@@ -193,15 +218,20 @@
                     </div>
                 </div>
 
-                <div id="milestone-S8" class="timeline-card bg-white rounded-xl shadow-lg p-4 sm:p-6 md:col-span-2 lg:col-span-3 flex flex-col justify-between" style="border-left: 6px solid #FF6B6B;">
+                <div id="milestone-S8"
+                    class="timeline-card bg-white rounded-xl shadow-lg p-4 sm:p-6 md:col-span-2 lg:col-span-3 flex flex-col justify-between"
+                    style="border-left: 6px solid #FF6B6B;">
                     <div>
-                        <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#FF6B6B] text-white">S8 (Spring 2028) • 11.0 Cr</span>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#FF6B6B] text-white">S8 (Spring
+                            2028) • 11.0 Cr</span>
                         <h3 class="text-lg font-bold text-[#073B4C] mt-2 mb-1">Cloud & UX Specialization Finalized</h3>
                         <p class="text-xs sm:text-sm text-slate-600 mb-3">
-                            This term is your credential capstone, completing both the infrastructure (Cloud) and human-centered design (UX) expertise.
+                            This term is your credential capstone, completing both the infrastructure (Cloud) and
+                            human-centered design (UX) expertise.
                         </p>
                         <h4 class="text-sm font-semibold text-[#118AB2] mb-2">Courses Completed:</h4>
-                        <ul class="list-disc list-inside text-xs sm:text-sm text-slate-700 space-y-0.5 grid grid-cols-1 sm:grid-cols-2">
+                        <ul
+                            class="list-disc list-inside text-xs sm:text-sm text-slate-700 space-y-0.5 grid grid-cols-1 sm:grid-cols-2">
                             <li><b>ITM 310</b> (Applied Cloud Computing)</li>
                             <li><b>ART 432R</b> (Design Thinking: User Research)</li>
                             <li>WDD 199 (Tech Product Dev I)</li>
@@ -219,14 +249,17 @@
 
         <!-- Course Directory & Filters: Optimized for mobile stacking -->
         <section id="course-directory" class="mb-8 md:mb-12">
-            <h2 class="text-xl md:text-3xl font-bold text-center text-[#118AB2] mb-6">Part 4: Complete Interactive Course Directory</h2>
-            
+            <h2 class="text-xl md:text-3xl font-bold text-center text-[#118AB2] mb-6">Part 4: Complete Interactive
+                Course Directory</h2>
+
             <!-- Filter Bar: Grid uses 1 column on mobile, 2 on sm, 4 on lg -->
             <div class="bg-white rounded-xl shadow-md p-4 mb-4">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                    <input type="text" id="course-search" oninput="filterCourses()" placeholder="Search Name or Code..." class="p-2 border border-slate-300 rounded-lg text-sm focus:ring-[#118AB2] focus:border-[#118AB2]">
-                    
-                    <select id="filter-semester" onchange="filterCourses()" class="p-2 border border-slate-300 rounded-lg text-sm focus:ring-[#118AB2] focus:border-[#118AB2]">
+                    <input type="text" id="course-search" oninput="filterCourses()" placeholder="Search Name or Code..."
+                        class="p-2 border border-slate-300 rounded-lg text-sm focus:ring-[#118AB2] focus:border-[#118AB2]">
+
+                    <select id="filter-semester" onchange="filterCourses()"
+                        class="p-2 border border-slate-300 rounded-lg text-sm focus:ring-[#118AB2] focus:border-[#118AB2]">
                         <option value="">Filter by Semester</option>
                         <option value="S0 (Fall 2025)">S0 (Fall 2025)</option>
                         <option value="S1 (Winter 2026)">S1 (Winter 2026)</option>
@@ -240,8 +273,9 @@
                         <option value="S9 (Fall 2028)">S9 (Fall 2028)</option>
                         <option value="S10 (Winter 2029)">S10 (Winter 2029)</option>
                     </select>
-                    
-                    <select id="filter-credits" onchange="filterCourses()" class="p-2 border border-slate-300 rounded-lg text-sm focus:ring-[#118AB2] focus:border-[#118AB2]">
+
+                    <select id="filter-credits" onchange="filterCourses()"
+                        class="p-2 border border-slate-300 rounded-lg text-sm focus:ring-[#118AB2] focus:border-[#118AB2]">
                         <option value="">Filter by Credits</option>
                         <option value="1.0">1.0 Credit</option>
                         <option value="2.0">2.0 Credits</option>
@@ -251,7 +285,8 @@
                         <option value="1.5">1.5 Credits</option>
                     </select>
 
-                    <select id="filter-status" onchange="filterCourses()" class="p-2 border border-slate-300 rounded-lg text-sm focus:ring-[#118AB2] focus:border-[#118AB2]">
+                    <select id="filter-status" onchange="filterCourses()"
+                        class="p-2 border border-slate-300 rounded-lg text-sm focus:ring-[#118AB2] focus:border-[#118AB2]">
                         <option value="">Filter by Status</option>
                         <option value="Planned">Planned</option>
                         <option value="Completed">Completed</option>
@@ -264,62 +299,354 @@
                 <table id="course-table" class="min-w-full divide-y divide-slate-200">
                     <thead class="bg-gradient-header text-white">
                         <tr>
-                            <th scope="col" class="px-3 sm:px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Course Name</th>
-                            <th scope="col" class="px-3 sm:px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Code</th>
-                            <th scope="col" class="px-3 sm:px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Credits</th>
-                            <th scope="col" class="px-3 sm:px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Semester</th>
-                            <th scope="col" class="px-3 sm:px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Status</th>
+                            <th scope="col"
+                                class="px-3 sm:px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Course
+                                Name</th>
+                            <th scope="col"
+                                class="px-3 sm:px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Code
+                            </th>
+                            <th scope="col"
+                                class="px-3 sm:px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Credits
+                            </th>
+                            <th scope="col"
+                                class="px-3 sm:px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
+                                Semester</th>
+                            <th scope="col"
+                                class="px-3 sm:px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Status
+                            </th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-100 text-xs sm:text-sm">
                         <!-- Data rows (truncated for brevity in this explanation, but complete in the file) -->
-                        <tr data-status="Completed" data-credits="2.0" data-semester="N/A" class="bg-slate-50"><td class="px-3 sm:px-6 py-3 font-medium text-[#06D6A0]">Introduction to Programming</td><td class="px-3 sm:px-6 py-3 text-slate-500">CSE 110</td><td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td><td class="px-3 sm:px-6 py-3 text-slate-500">N/A</td><td class="px-3 sm:px-6 py-3 font-semibold text-[#06D6A0]">Completed</td></tr>
-                        <tr data-status="Completed" data-credits="2.0" data-semester="N/A" class="bg-slate-50"><td class="px-3 sm:px-6 py-3 font-medium text-[#06D6A0]">Web Fundamentals</td><td class="px-3 sm:px-6 py-3 text-slate-500">WDD 130</td><td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td><td class="px-3 sm:px-6 py-3 text-slate-500">N/A</td><td class="px-3 sm:px-6 py-3 font-semibold text-[#06D6A0]">Completed</td></tr>
-                        <tr data-status="Completed" data-credits="1.0" data-semester="N/A" class="bg-slate-50"><td class="px-3 sm:px-6 py-3 font-medium text-[#06D6A0]">Intro to Engineering & Tech</td><td class="px-3 sm:px-6 py-3 text-slate-500">ME 101</td><td class="px-3 sm:px-6 py-3 text-slate-500">1.0</td><td class="px-3 sm:px-6 py-3 text-slate-500">N/A</td><td class="px-3 sm:px-6 py-3 font-semibold text-[#06D6A0]">Completed</td></tr>
-                        <tr data-status="Completed" data-credits="2.0" data-semester="N/A" class="bg-slate-50"><td class="px-3 sm:px-6 py-3 font-medium text-[#06D6A0]">Teachings of Book of Mormon</td><td class="px-3 sm:px-6 py-3 text-slate-500">REL 275C</td><td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td><td class="px-3 sm:px-6 py-3 text-slate-500">N/A</td><td class="px-3 sm:px-6 py-3 font-semibold text-[#06D6A0]">Completed</td></tr>
-                        <tr data-status="Completed" data-credits="2.0" data-semester="N/A" class="bg-slate-50"><td class="px-3 sm:px-6 py-3 font-medium text-[#06D6A0]">Missionary Preparation</td><td class="px-3 sm:px-6 py-3 text-slate-500">REL 130</td><td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td><td class="px-3 sm:px-6 py-3 text-slate-500">N/A</td><td class="px-3 sm:px-6 py-3 font-semibold text-[#06D6A0]">Completed</td></tr>
-                        <tr data-status="Planned" data-credits="2.0" data-semester="S0 (Fall 2025)"> <td class="px-3 sm:px-6 py-3 font-medium">Programming with Functions</td><td class="px-3 sm:px-6 py-3 text-slate-500">CSE 111</td><td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td><td class="px-3 sm:px-6 py-3 text-slate-500">S0 (Fall 2025)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="2.0" data-semester="S0 (Fall 2025)"><td class="px-3 sm:px-6 py-3 font-medium">Dynamic Web Fundamentals</td><td class="px-3 sm:px-6 py-3 text-slate-500">WDD 131</td><td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td><td class="px-3 sm:px-6 py-3 text-slate-500">S0 (Fall 2025)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="2.0" data-semester="S0 (Fall 2025)"><td class="px-3 sm:px-6 py-3 font-medium">The Eternal Family</td><td class="px-3 sm:px-6 py-3 text-slate-500">REL 200C</td><td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td><td class="px-3 sm:px-6 py-3 text-slate-500">S0 (Fall 2025)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="1.0" data-semester="S0 (Fall 2025)"><td class="px-3 sm:px-6 py-3 font-medium">Special Topics</td><td class="px-3 sm:px-6 py-3 text-slate-500">CSE 290R</td><td class="px-3 sm:px-6 py-3 text-slate-500">1.0</td><td class="px-3 sm:px-6 py-3 text-slate-500">S0 (Fall 2025)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="2.0" data-semester="S1 (Winter 2026)"><td class="px-3 sm:px-6 py-3 font-medium">Introduction to Cloud Technologies</td><td class="px-3 sm:px-6 py-3 text-slate-500">ITM 101</td><td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S1 (Winter 2026)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="2.0" data-semester="S1 (Winter 2026)"><td class="px-3 sm:px-6 py-3 font-medium">Web Frontend Development I</td><td class="px-3 sm:px-6 py-3 text-slate-500">WDD 231</td><td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S1 (Winter 2026)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="3.0" data-semester="S1 (Winter 2026)"><td class="px-3 sm:px-6 py-3 font-medium">Adobe CC Basics</td><td class="px-3 sm:px-6 py-3 text-slate-500">ART 125</td><td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S1 (Winter 2026)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="3.0" data-semester="S1 (Winter 2026)"><td class="px-3 sm:px-6 py-3 font-medium">SQL</td><td class="px-3 sm:px-6 py-3 text-slate-500">ITM 220</td><td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S1 (Winter 2026)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="2.0" data-semester="S2 (Spring 2026)"><td class="px-3 sm:px-6 py-3 font-medium">Building an Eternal Marriage</td><td class="px-3 sm:px-6 py-3 text-slate-500">REL 235</td><td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S2 (Spring 2026)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="3.0" data-semester="S2 (Spring 2026)"><td class="px-3 sm:px-6 py-3 font-medium">Math for the Real World</td><td class="px-3 sm:px-6 py-3 text-slate-500">MATH 108X</td><td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S2 (Spring 2026)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="2.0" data-semester="S2 (Spring 2026)"><td class="px-3 sm:px-6 py-3 font-medium">Advanced CSS</td><td class="px-3 sm:px-6 py-3 text-slate-500">WDD 331R</td><td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S2 (Spring 2026)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="2.0" data-semester="S2 (Spring 2026)"><td class="px-3 sm:px-6 py-3 font-medium">Programming with Classes</td><td class="px-3 sm:px-6 py-3 text-slate-500">CSE 210</td><td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S2 (Spring 2026)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="2.0" data-semester="S3 (Fall 2026)"><td class="px-3 sm:px-6 py-3 font-medium">Foundations of the Restoration</td><td class="px-3 sm:px-6 py-3 text-slate-500">REL 225C</td><td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S3 (Fall 2026)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="3.0" data-semester="S3 (Fall 2026)"><td class="px-3 sm:px-6 py-3 font-medium">Writing and Reasoning Foundations</td><td class="px-3 sm:px-6 py-3 text-slate-500">ENG 150</td><td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S3 (Fall 2026)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="3.0" data-semester="S3 (Fall 2026)"><td class="px-3 sm:px-6 py-3 font-medium">Introduction to Graphic Design</td><td class="px-3 sm:px-6 py-3 text-slate-500">ART 130</td><td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S3 (Fall 2026)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="3.0" data-semester="S3 (Fall 2026)"><td class="px-3 sm:px-6 py-3 font-medium">Environmental Stewardship</td><td class="px-3 sm:px-6 py-3 text-slate-500">GESCI 203</td><td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S3 (Fall 2026)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="3.0" data-semester="S4 (Winter 2027)"><td class="px-3 sm:px-6 py-3 font-medium">Typography I</td><td class="px-3 sm:px-6 py-3 text-slate-500">ART 230</td><td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S4 (Winter 2027)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="3.0" data-semester="S4 (Winter 2027)"><td class="px-3 sm:px-6 py-3 font-medium">Web Backend Development</td><td class="px-3 sm:px-6 py-3 text-slate-500">CSE 340</td><td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S4 (Winter 2027)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="2.0" data-semester="S4 (Winter 2027)"><td class="px-3 sm:px-6 py-3 font-medium">Introduction to Linux</td><td class="px-3 sm:px-6 py-3 text-slate-500">ITM 112</td><td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S4 (Winter 2027)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="1.0" data-semester="S4 (Winter 2027)"><td class="px-3 sm:px-6 py-3 font-medium">Project-Based Internship</td><td class="px-3 sm:px-6 py-3 text-slate-500">BUS 297R</td><td class="px-3 sm:px-6 py-3 text-slate-500">1.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S4 (Winter 2027)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="3.5" data-semester="S5 (Spring 2027)"><td class="px-3 sm:px-6 py-3 font-medium">Graphic Design + Lab</td><td class="px-3 sm:px-6 py-3 text-slate-500">ART 235 + 235L</td><td class="px-3 sm:px-6 py-3 text-slate-500">3.5</td><td class="px-3 sm:px-6 py-3 text-slate-700">S5 (Spring 2027)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="4.0" data-semester="S5 (Spring 2027)"><td class="px-3 sm:px-6 py-3 font-medium">Full Stack Foundations</td><td class="px-3 sm:px-6 py-3 text-slate-500">WDD 360</td><td class="px-3 sm:px-6 py-3 text-slate-500">4.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S5 (Spring 2027)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="3.0" data-semester="S5 (Spring 2027)"><td class="px-3 sm:px-6 py-3 font-medium">Cloud Foundations</td><td class="px-3 sm:px-6 py-3 text-slate-500">ITM 300</td><td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S5 (Spring 2027)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="2.0" data-semester="S6 (Fall 2027)"><td class="px-3 sm:px-6 py-3 font-medium">Jesus Christ and His Everlasting Gospel</td><td class="px-3 sm:px-6 py-3 text-slate-500">REL 250C</td><td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S6 (Fall 2027)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="3.0" data-semester="S6 (Fall 2027)"><td class="px-3 sm:px-6 py-3 font-medium">Principles of Citizenship...</td><td class="px-3 sm:px-6 py-3 text-slate-500">CIVIC 150</td><td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S6 (Fall 2027)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="3.0" data-semester="S6 (Fall 2027)"><td class="px-3 sm:px-6 py-3 font-medium">User Interface Design</td><td class="px-3 sm:px-6 py-3 text-slate-500">ART 332R</td><td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S6 (Fall 2027)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="3.0" data-semester="S6 (Fall 2027)"><td class="px-3 sm:px-6 py-3 font-medium">Web Full-Stack Development</td><td class="px-3 sm:px-6 py-3 text-slate-500">WDD 430</td><td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S6 (Fall 2027)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="2.0" data-semester="S7 (Winter 2028)"><td class="px-3 sm:px-6 py-3 font-medium">Christian History</td><td class="px-3 sm:px-6 py-3 text-slate-500">REL 352</td><td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S7 (Winter 2028)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="4.0" data-semester="S7 (Winter 2028)"><td class="px-3 sm:px-6 py-3 font-medium">Beginning Spanish I</td><td class="px-3 sm:px-6 py-3 text-slate-500">SPAN 101</td><td class="px-3 sm:px-6 py-3 text-slate-500">4.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S7 (Winter 2028)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="3.0" data-semester="S7 (Winter 2028)"><td class="px-3 sm:px-6 py-3 font-medium">User Experience Design</td><td class="px-3 sm:px-6 py-3 text-slate-500">ART 431R</td><td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S7 (Winter 2028)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="1.5" data-semester="S7 (Winter 2028)"><td class="px-3 sm:px-6 py-3 font-medium">Academic Success + Family Studies</td><td class="px-3 sm:px-6 py-3 text-slate-500">GS 102R + FAML 390R</td><td class="px-3 sm:px-6 py-3 text-slate-500">1.5</td><td class="px-3 sm:px-6 py-3 text-slate-700">S7 (Winter 2028)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="3.0" data-semester="S8 (Spring 2028)"><td class="px-3 sm:px-6 py-3 font-medium">Advanced Writing in Professional Contexts</td><td class="px-3 sm:px-6 py-3 text-slate-500">BUS 301</td><td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S8 (Spring 2028)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="2.0" data-semester="S8 (Spring 2028)"><td class="px-3 sm:px-6 py-3 font-medium">Technology Product Development I</td><td class="px-3 sm:px-6 py-3 text-slate-500">WDD 199</td><td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S8 (Spring 2028)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="3.0" data-semester="S8 (Spring 2028)"><td class="px-3 sm:px-6 py-3 font-medium">Design Thinking: User Research</td><td class="px-3 sm:px-6 py-3 text-slate-500">ART 432R</td><td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S8 (Spring 2028)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="3.0" data-semester="S8 (Spring 2028)"><td class="px-3 sm:px-6 py-3 font-medium">Applied Cloud Computing</td><td class="px-3 sm:px-6 py-3 text-slate-500">ITM 310</td><td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S8 (Spring 2028)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="3.0" data-semester="S9 (Fall 2028)"><td class="px-3 sm:px-6 py-3 font-medium">From Atoms to Humans</td><td class="px-3 sm:px-6 py-3 text-slate-500">GESCI 101</td><td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S9 (Fall 2028)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="3.0" data-semester="S9 (Fall 2028)"><td class="px-3 sm:px-6 py-3 font-medium">Sustaining Human Life</td><td class="px-3 sm:px-6 py-3 text-slate-500">GESCI 110</td><td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S9 (Fall 2028)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="3.0" data-semester="S9 (Fall 2028)"><td class="px-3 sm:px-6 py-3 font-medium">Web Business Creation</td><td class="px-3 sm:px-6 py-3 text-slate-500">MKT 353</td><td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S9 (Fall 2028)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="2.0" data-semester="S9 (Fall 2028)"><td class="px-3 sm:px-6 py-3 font-medium">Technology Product Development II</td><td class="px-3 sm:px-6 py-3 text-slate-500">WDD 299</td><td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S9 (Fall 2028)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="4.0" data-semester="S10 (Winter 2029)"><td class="px-3 sm:px-6 py-3 font-medium">Technology Product Development III & IV</td><td class="px-3 sm:px-6 py-3 text-slate-500">WDD 399 + WDD 499</td><td class="px-3 sm:px-6 py-3 text-slate-500">4.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S10 (Winter 2029)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="3.0" data-semester="S10 (Winter 2029)"><td class="px-3 sm:px-6 py-3 font-medium">Internship</td><td class="px-3 sm:px-6 py-3 text-slate-500">ITM 398R</td><td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S10 (Winter 2029)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
-                        <tr data-status="Planned" data-credits="3.0" data-semester="S10 (Winter 2029)"><td class="px-3 sm:px-6 py-3 font-medium">Natural Disasters</td><td class="px-3 sm:px-6 py-3 text-slate-500">GESCI 201</td><td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td><td class="px-3 sm:px-6 py-3 text-slate-700">S10 (Winter 2029)</td><td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td></tr>
+                        <tr data-status="Completed" data-credits="2.0" data-semester="N/A" class="bg-slate-50">
+                            <td class="px-3 sm:px-6 py-3 font-medium text-[#06D6A0]">Introduction to Programming</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">CSE 110</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">N/A</td>
+                            <td class="px-3 sm:px-6 py-3 font-semibold text-[#06D6A0]">Completed</td>
+                        </tr>
+                        <tr data-status="Completed" data-credits="2.0" data-semester="N/A" class="bg-slate-50">
+                            <td class="px-3 sm:px-6 py-3 font-medium text-[#06D6A0]">Web Fundamentals</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">WDD 130</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">N/A</td>
+                            <td class="px-3 sm:px-6 py-3 font-semibold text-[#06D6A0]">Completed</td>
+                        </tr>
+                        <tr data-status="Completed" data-credits="1.0" data-semester="N/A" class="bg-slate-50">
+                            <td class="px-3 sm:px-6 py-3 font-medium text-[#06D6A0]">Intro to Engineering & Tech</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">ME 101</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">1.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">N/A</td>
+                            <td class="px-3 sm:px-6 py-3 font-semibold text-[#06D6A0]">Completed</td>
+                        </tr>
+                        <tr data-status="Completed" data-credits="2.0" data-semester="N/A" class="bg-slate-50">
+                            <td class="px-3 sm:px-6 py-3 font-medium text-[#06D6A0]">Teachings of Book of Mormon</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">REL 275C</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">N/A</td>
+                            <td class="px-3 sm:px-6 py-3 font-semibold text-[#06D6A0]">Completed</td>
+                        </tr>
+                        <tr data-status="Completed" data-credits="2.0" data-semester="N/A" class="bg-slate-50">
+                            <td class="px-3 sm:px-6 py-3 font-medium text-[#06D6A0]">Missionary Preparation</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">REL 130</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">N/A</td>
+                            <td class="px-3 sm:px-6 py-3 font-semibold text-[#06D6A0]">Completed</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="2.0" data-semester="S0 (Fall 2025)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Programming with Functions</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">CSE 111</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">S0 (Fall 2025)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="2.0" data-semester="S0 (Fall 2025)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Dynamic Web Fundamentals</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">WDD 131</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">S0 (Fall 2025)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="2.0" data-semester="S0 (Fall 2025)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">The Eternal Family</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">REL 200C</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">S0 (Fall 2025)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="1.0" data-semester="S0 (Fall 2025)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Special Topics</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">CSE 290R</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">1.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">S0 (Fall 2025)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="2.0" data-semester="S1 (Winter 2026)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Introduction to Cloud Technologies</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">ITM 101</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S1 (Winter 2026)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="2.0" data-semester="S1 (Winter 2026)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Web Frontend Development I</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">WDD 231</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S1 (Winter 2026)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="3.0" data-semester="S1 (Winter 2026)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Adobe CC Basics</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">ART 125</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S1 (Winter 2026)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="3.0" data-semester="S1 (Winter 2026)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">SQL</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">ITM 220</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S1 (Winter 2026)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="2.0" data-semester="S2 (Spring 2026)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Building an Eternal Marriage</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">REL 235</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S2 (Spring 2026)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="3.0" data-semester="S2 (Spring 2026)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Math for the Real World</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">MATH 108X</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S2 (Spring 2026)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="2.0" data-semester="S2 (Spring 2026)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Advanced CSS</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">WDD 331R</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S2 (Spring 2026)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="2.0" data-semester="S2 (Spring 2026)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Programming with Classes</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">CSE 210</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S2 (Spring 2026)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="2.0" data-semester="S3 (Fall 2026)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Foundations of the Restoration</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">REL 225C</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S3 (Fall 2026)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="3.0" data-semester="S3 (Fall 2026)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Writing and Reasoning Foundations</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">ENG 150</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S3 (Fall 2026)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="3.0" data-semester="S3 (Fall 2026)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Introduction to Graphic Design</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">ART 130</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S3 (Fall 2026)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="3.0" data-semester="S3 (Fall 2026)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Environmental Stewardship</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">GESCI 203</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S3 (Fall 2026)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="3.0" data-semester="S4 (Winter 2027)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Typography I</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">ART 230</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S4 (Winter 2027)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="3.0" data-semester="S4 (Winter 2027)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Web Backend Development</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">CSE 340</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S4 (Winter 2027)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="2.0" data-semester="S4 (Winter 2027)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Introduction to Linux</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">ITM 112</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S4 (Winter 2027)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="1.0" data-semester="S4 (Winter 2027)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Project-Based Internship</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">BUS 297R</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">1.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S4 (Winter 2027)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="3.5" data-semester="S5 (Spring 2027)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Graphic Design + Lab</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">ART 235 + 235L</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">3.5</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S5 (Spring 2027)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="4.0" data-semester="S5 (Spring 2027)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Full Stack Foundations</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">WDD 360</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">4.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S5 (Spring 2027)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="3.0" data-semester="S5 (Spring 2027)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Cloud Foundations</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">ITM 300</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S5 (Spring 2027)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="2.0" data-semester="S6 (Fall 2027)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Jesus Christ and His Everlasting Gospel</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">REL 250C</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S6 (Fall 2027)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="3.0" data-semester="S6 (Fall 2027)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Principles of Citizenship...</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">CIVIC 150</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S6 (Fall 2027)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="3.0" data-semester="S6 (Fall 2027)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">User Interface Design</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">ART 332R</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S6 (Fall 2027)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="3.0" data-semester="S6 (Fall 2027)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Web Full-Stack Development</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">WDD 430</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S6 (Fall 2027)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="2.0" data-semester="S7 (Winter 2028)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Christian History</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">REL 352</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S7 (Winter 2028)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="4.0" data-semester="S7 (Winter 2028)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Beginning Spanish I</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">SPAN 101</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">4.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S7 (Winter 2028)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="3.0" data-semester="S7 (Winter 2028)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">User Experience Design</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">ART 431R</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S7 (Winter 2028)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="1.5" data-semester="S7 (Winter 2028)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Academic Success + Family Studies</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">GS 102R + FAML 390R</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">1.5</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S7 (Winter 2028)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="3.0" data-semester="S8 (Spring 2028)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Advanced Writing in Professional Contexts</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">BUS 301</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S8 (Spring 2028)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="2.0" data-semester="S8 (Spring 2028)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Technology Product Development I</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">WDD 199</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S8 (Spring 2028)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="3.0" data-semester="S8 (Spring 2028)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Design Thinking: User Research</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">ART 432R</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S8 (Spring 2028)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="3.0" data-semester="S8 (Spring 2028)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Applied Cloud Computing</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">ITM 310</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S8 (Spring 2028)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="3.0" data-semester="S9 (Fall 2028)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">From Atoms to Humans</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">GESCI 101</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S9 (Fall 2028)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="3.0" data-semester="S9 (Fall 2028)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Sustaining Human Life</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">GESCI 110</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S9 (Fall 2028)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="3.0" data-semester="S9 (Fall 2028)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Web Business Creation</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">MKT 353</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S9 (Fall 2028)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="2.0" data-semester="S9 (Fall 2028)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Technology Product Development II</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">WDD 299</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">2.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S9 (Fall 2028)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="4.0" data-semester="S10 (Winter 2029)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Technology Product Development III & IV</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">WDD 399 + WDD 499</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">4.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S10 (Winter 2029)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="3.0" data-semester="S10 (Winter 2029)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Internship</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">ITM 398R</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S10 (Winter 2029)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
+                        <tr data-status="Planned" data-credits="3.0" data-semester="S10 (Winter 2029)">
+                            <td class="px-3 sm:px-6 py-3 font-medium">Natural Disasters</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">GESCI 201</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-500">3.0</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">S10 (Winter 2029)</td>
+                            <td class="px-3 sm:px-6 py-3 text-slate-700">Planned</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -334,7 +661,8 @@
     </main>
 
     <footer class="text-center p-6 mt-8 bg-white border-t border-slate-200">
-        <p class="text-sm text-slate-500">This infographic was generated by Google Gemini with data based on your academic plan (Fall 2025 - Winter 2029).</p>
+        <p class="text-sm text-slate-500">This infographic was generated based on your academic plan (Fall 2025 - Winter
+            2029).</p>
     </footer>
 
     <script>
@@ -535,4 +863,5 @@
         })();
     </script>
 </body>
+
 </html>
