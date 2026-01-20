@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Checketts</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="text-3xl text-center p-10">Daniel Checketts</h1>
+    </header>
+    <main>
+        <section id="about" class="bg-blue-500 p-5">
+            <h2 class="text-xl font-bold">About Me</h2>
+            <span>Hi, I'm Daniel! I am from Riverton, Utah, and I am majoring in Web Design and Development. This is my second semester back from my mission. I served in the Eugene Oregon Mission. I am currently engaged, and planning on getting married at the end of this semester. My dad is a programmer for the church, which got me interested in learning to program.</span>
+        </section>
+        <section id="hobbies" class="bg-green-700 p-5">
+            <h2 class="text-xl font-bold">Hobbies</h2>
+            <span>Some of my favorite hobbies include:</span>
+            <ul class="list-disc pl-10">
+                <li>Programming (HTML, Python, and CSS)</li>
+                <li>Writing (Sci-fi and fantasy)</li>
+                <li>Reading (Sci-fi, fantasy, and romance)</li>
+            </ul>
+        </section>
+        <section id="programming" class="bg-red-600 p-5">
+            <h2 class="text-xl font-bold">Programming</h2>
+            <span id="target">One fun thing that I'm working on learning is HTMX, which adds interactivity into HTML without needing to use a JavaScript file. Below is a button that will switch this section out with an HTML snippet from another file! Click it to see what happens!</span>
+
+            <button type="button" 
+            hx-get="./example.html" 
+            hx-target="#target"
+            hx-swap="innerHTML"
+            >Click Me!</button>
+
+            <span>I also have been trying to learn Tailwind CSS, which can be used to style a page without an additional CSS file! This page was styled with Tailwind!</span>
+        </section>
+    </main>
+    <footer class="text-center p-5">Daniel Checketts - 2026</footer>
+</body>
+</html>
